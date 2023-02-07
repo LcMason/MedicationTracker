@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+   skip_before_action :authorize, only: :create 
 
     # POST /signup
     def create
-        user = User.create(user_params)
+        user = User.create!(user_params)
         if user.valid?
             session[:user_id] = user.id 
             render json: user, status: :created
@@ -11,11 +12,12 @@ class UsersController < ApplicationController
         end
     end
 
+        # GET /me 
+        def show
+            render json: @current_user
+        end
 
-
-
-
-
+    
 
 
 
@@ -24,4 +26,6 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:username, :password, :password_confirmation, :age, :bio)
     end
+
+
 end
