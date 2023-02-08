@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :reviews
-    has_many :medications, through: :reviews
+    has_many :trackers
+    has_many :medications, through: :trackers
 
     has_secure_password
 
