@@ -1,6 +1,6 @@
 class Medication < ApplicationRecord
-    has_many :users
-    has_many :trackers, through: :users
+    has_many :trackers
+    has_many :users, through: :trackers
 
     validates :name, presence: true
     validates :form, presence: true 

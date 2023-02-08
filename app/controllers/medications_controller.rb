@@ -4,5 +4,5 @@ class MedicationsController < ApplicationController
         render json: Medication.all
     end
 
-    
+
 end
