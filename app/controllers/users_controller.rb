@@ -17,8 +17,18 @@ class UsersController < ApplicationController
             render json: @current_user
         end
 
-    
 
+        def update
+            user = User.find_by(id: params[:id])
+            if user
+                user.update(patient_params)
+                render json: user, status: :accepted
+            else
+                render json: {error: "medication not found"}, status: :not_found
+            end
+        end
+    
+        # rails resource routing lab to add a like feature for medication. set maximum likes to 5
 
 
     private
@@ -27,5 +37,10 @@ class UsersController < ApplicationController
         params.permit(:username, :password, :password_confirmation, :age, :bio)
     end
 
-
+    def patient_params
+        params.permit(:name, :form, :instruction, :rating)
+    end
 end
+
+
+

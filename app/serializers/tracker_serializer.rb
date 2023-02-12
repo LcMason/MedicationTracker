@@ -1,3 +1,3 @@
 class TrackerSerializer < ActiveModel::Serializer
-  attributes :quantity, :frequency 
+  attributes :review, :quantity, :frequency 
 end

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
-  get "/medications", to: "medications#index"
+  # get "/patients-medications", to: "patients#index"
+
+resources :medications, only: [:index, :create, :update, :destroy] 
   
 
 

@@ -34,13 +34,13 @@ medication10 = Medication.create(name: "Atorvastatin", form: "Tablet", instructi
 
 
 puts ":medical_symbol: Seeding trackers..."
-tracker1 = Tracker.create(frequency: 2, quantity: 13, user_id: user1.id, medication_id: medication1.id )
-tracker2 = Tracker.create(frequency: 2, quantity: 13, user_id: user2.id, medication_id: medication2.id )
-tracker3 = Tracker.create(frequency: 4, quantity: 15, user_id: user3.id, medication_id: medication3.id )
-tracker4 = Tracker.create(frequency: 4, quantity: 22, user_id: user1.id, medication_id: medication4.id )
-tracker5 = Tracker.create(frequency: 4, quantity: 10, user_id: user2.id, medication_id: medication5.id )
-tracker6 = Tracker.create(frequency: 2, quantity: 11, user_id: user3.id, medication_id: medication6.id )
-tracker7 = Tracker.create(frequency: 3, quantity: 12, user_id: user1.id, medication_id: medication7.id )
-tracker8 = Tracker.create(frequency: 1, quantity: 12, user_id: user2.id, medication_id: medication8.id )
-tracker9 = Tracker.create(frequency: 1, quantity: 11, user_id: user3.id, medication_id: medication9.id )
-tracker10 = Tracker.create(frequency: 1, quantity: 10, user_id: user1.id, medication_id: medication10.id )
+tracker1 = Tracker.create(review: "helps with severe pain.", frequency: 2, quantity: 13, user_id: user1.id, medication_id: medication1.id )
+tracker2 = Tracker.create(review: "experience nausea and some vomitting.", frequency: 2, quantity: 13, user_id: user2.id, medication_id: medication2.id )
+tracker3 = Tracker.create(review: "regulated my blood pressure.", frequency: 4, quantity: 15, user_id: user3.id, medication_id: medication3.id )
+tracker4 = Tracker.create(review: "cured my bacterial infection.", frequency: 4, quantity: 22, user_id: user1.id, medication_id: medication4.id )
+tracker5 = Tracker.create(review: "eased my asthma attack.", frequency: 4, quantity: 10, user_id: user2.id, medication_id: medication5.id )
+tracker6 = Tracker.create(review: "relieved symptoms related to my allergies.", frequency: 2, quantity: 11, user_id: user3.id, medication_id: medication6.id )
+tracker7 = Tracker.create(review: "controlled my seizures and provided relief for nerve pain.", frequency: 3, quantity: 12, user_id: user1.id, medication_id: medication7.id )
+tracker8 = Tracker.create(review: "provided relief for my acid reflux.", frequency: 1, quantity: 12, user_id: user2.id, medication_id: medication8.id )
+tracker9 = Tracker.create(review: "experienced muscle cramps and headaches.", frequency: 1, quantity: 11, user_id: user3.id, medication_id: medication9.id )
+tracker10 = Tracker.create(review: "experienced cold like symptoms.", frequency: 1, quantity: 10, user_id: user1.id, medication_id: medication10.id )
