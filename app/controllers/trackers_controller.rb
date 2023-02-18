@@ -1,11 +1,22 @@
 class TrackersController < ApplicationController
 
-    # class PatientsController < ApplicationController
+    def index
+        render json: Tracker.all
+    end
+ 
+    def create
+        # tracker = Tracker.find_by(id: params[:id])
+        # if tracker.valid?
+        # # tracker.create!(tracker_params)
+            tracker = Tracker.create(tracker_params)
+            # if tracker.valid?
+            render json: tracker, status: :created 
+        # else
+            # render json: {error: tracker.errors.full_messages }, status: :unprocessable_entity
+        # end
+    end
 
-#     def index
-#         render json: Medication.all
-#     end
-
+    
 
 #     def update
 #         patient = Patient.find_by(id: params[:id])
@@ -17,14 +28,12 @@ class TrackersController < ApplicationController
 #         end
 #     end
 
-# # Potentially use the patient serializer (or delete serializer). Pass attributes for medication in serializer
+# # Pass medication to tracker controller to have access to create a new review
 
-# # Pass medication to patients controller to have access to the medication attributes
-
-#     private
-#     def patient_params
-#         params.permit(:name, :form, :instruction, :rating)
-#     end
+    private
+    def tracker_params
+        params.permit(:review, :quantity, :frequency)
+    end
 # end
 
 

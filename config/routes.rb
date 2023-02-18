@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # get "/patients-medications", to: "patients#index"
 
 resources :medications, only: [:index, :create, :update, :destroy] 
+resources :trackers, only: [:index, :create]
   
 
 
