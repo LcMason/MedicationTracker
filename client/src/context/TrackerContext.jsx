@@ -12,7 +12,7 @@ const TrackerProvider = ({ children }) => {
     useEffect(() => {
         fetch('/trackers')                          // should the route be trackers or reviews
         .then(resp => resp.json())
-        .then(trackers => setTrackers(trackers))
+        .then(console.log)
     }, [])
 
 }

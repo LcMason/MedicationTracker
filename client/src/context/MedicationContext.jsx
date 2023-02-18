@@ -8,12 +8,12 @@ const MedicationContext =  createContext(null);
 const MedicationProvider = ({ children }) => {
     const [medications, setMedications] = useState([]);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
 
   return (
-    <div>MedicationContext</div>
+    <div></div>
   )
 }
 
