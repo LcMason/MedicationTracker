@@ -2,19 +2,22 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
+
 const SignUp = () => {
-  console.log("I'm in the SignUp Component");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [age, setAge] = useState("");
+  // const [bio, setBio] = useState("")
   const { signup, setErrors, errors } = useContext(UserContext);
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("/signup", {
       method: "POST",
-      headers,
+      "Accept": "application/json",
+      "Content-Type": "application/json",
       body: JSON.stringify({
         username,
         password,
@@ -26,9 +29,9 @@ const SignUp = () => {
       .then((user) => {
         if (!user.errors) {
           signup(user);
-          navigate(`/users/${user.id}/books`);
+          navigate(`/users/${user.id}/medications`);
         } else {
-          const errorLis = user.errors.map((e, ind) => <li key={ind}>{e}</li>);
+          const errorLis = user.errors.map((e, index) => <li key={index}>{e}</li>);
           setErrors(errorLis);
         }
       });
@@ -100,7 +103,7 @@ const SignUp = () => {
             </div>
           </div>
           <div className="text-center text-light fw-bolder pb-3">
-            <Welcome />Please sign up for an account.
+            {/* <Welcome />Please sign up for an account. */}
           </div>
           <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold">
             Sign Up
@@ -109,7 +112,7 @@ const SignUp = () => {
         </form>
       </div>
       </div>
-      <Body />
+      {/* <Body /> */}
     </div>
   );
 };

@@ -14,9 +14,9 @@ Tracker.destroy_all
 # assign each user to a variable
 #follow format for medication_id: medication1.id
 puts ":medical_symbol: Seeding users..."
-user1 = User.create(username: "Lionel Mason", password: "flatironschool", age: 25, bio: "Healthy male - Family history of high cholesterol")
-user2 = User.create(username: "Charles Grand", password: "theFlatironschool", age: 30, bio: "Healthy male - Family history of Type 2 Diabetes and seasonal asthma")
-user3 = User.create(username: "LcMason", password: "NewYorkCity", age: 35, bio: "Healthy male - Family history of high blood pressure")
+user1 = User.create(username: "Lionel Mason", password: "flatironschool", age: 25)
+user2 = User.create(username: "Charles Grand", password: "theFlatironschool", age: 30)
+user3 = User.create(username: "LcMason", password: "NewYorkCity", age: 35)
 
 
 
