@@ -10,8 +10,8 @@ const UserProvider = ({ children }) => {
     useEffect(() => {
         fetch("/me")
         .then((resp => resp.json()))
-        .then(data => {
-          console.log(data)
+        .then(user => {
+          setUser(user)
         })
     }, []);
 
@@ -27,9 +27,11 @@ const UserProvider = ({ children }) => {
     setUser(user);
     setLoggedIn(true);
   };
+
+  
   return (
     
-      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors }}>
+      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, setUser }}>
         {children}
       </UserContext.Provider>
     

@@ -6,8 +6,9 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login, setErrors, errors } = useContext(UserContext);
-
+  const { login, logout, setUser, setErrors, errors } = useContext(UserContext);
+  
+//what is the starting value of user in this file. User in useContext is returned but not deconstructed in Login.jsx
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -15,8 +16,9 @@ const Login = () => {
     
     fetch("/login", {
       method: "POST", 
+      headers: {
       "Accept": "application/json",
-    "Content-Type": "application/json",
+    "Content-Type": "application/json" },
       body: JSON.stringify({
         username,
         password,
@@ -26,8 +28,12 @@ const Login = () => {
         res.json().then(user => {
           login(user)
           navigate("/")
+        
+
         })
-      } else {
+      }
+      
+      else {
         res.json().then((err) => {
           // debugger;
           console.log(err.errors)
@@ -36,7 +42,6 @@ const Login = () => {
       }
     })
   }
-console.log("I'm in the login componenet.")
   return (
 
 

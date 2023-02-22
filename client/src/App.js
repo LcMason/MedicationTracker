@@ -9,7 +9,6 @@ import TrackerForm from './trackers/TrackerForm';
 import TrackerList from './trackers/TrackerList';
 import Login from './components/Login';
 import Signup from './components/Signup';
-
 import MedicationEdit from './medications/MedicationEdit';
 import MedicationForm from './medications/MedicationForm';
 import MedicationList from './medications/MedicationList';
@@ -27,7 +26,7 @@ function App() {
                 <TrackerProvider>
                <Routes>  
                 <Route path="/login" element={<Login />} /> 
-                <Route path="/home" element={<Home />} /> 
+                <Route path="/" element={<Home />} /> 
                 <Route path="/signup" element={<Signup />} /> 
                 <Route path="/medications/:id/edit" element={<MedicationEdit />} /> 
                 <Route path="/medications" element={<MedicationList />} /> 

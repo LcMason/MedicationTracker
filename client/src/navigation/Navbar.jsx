@@ -62,11 +62,11 @@ const Navbar = () => {
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/trackers/new">Create New Review</Link></li>
           <li><Link to="/signup">Signup</Link></li>
-             <li><Link to="/home">Home</Link></li>
+             <li><Link to="/">Home</Link></li>
           <li><Link to="/users/me"></Link></li>
         </ul>
       </div>
-  // </nav> 
+   </nav> 
   )
     } 
 

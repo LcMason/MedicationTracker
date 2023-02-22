@@ -1,21 +1,27 @@
 import { useEffect, useState, createContext } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 
-const TrackerContext = createContext(null);
+const TrackerContext = createContext();
 
 const TrackerProvider = ({ children }) => {
     const [trackers, setTrackers] = useState([]);
 
-    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('/trackers')                          // should the route be trackers or reviews
+        fetch('/trackers')                         
         .then(resp => resp.json())
-        .then(console.log)
+        .then(tracker => setTrackers(tracker))
     }, [])
 
+    return (
+        <TrackerContext.Provider value={trackers}>
+        {children}
+      </TrackerContext.Provider>
+    )
 }
+
+
 
 export { TrackerContext, TrackerProvider }
 

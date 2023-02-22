@@ -8,12 +8,12 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [age, setAge] = useState("");
-  // const [bio, setBio] = useState("")
   const { signup, setErrors, errors } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     fetch("/signup", {
       method: "POST",
       "Accept": "application/json",
@@ -101,14 +101,11 @@ const SignUp = () => {
                 onChange={(e) => setAge(e.target.value)}
               />
             </div>
-          </div>
-          <div className="text-center text-light fw-bolder pb-3">
-            {/* <Welcome />Please sign up for an account. */}
-          </div>
           <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold">
             Sign Up
           </button>
           <div className="text-light">{errors}</div>
+        </div>
         </form>
       </div>
       </div>
