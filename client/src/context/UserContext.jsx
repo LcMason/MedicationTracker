@@ -15,29 +15,28 @@ const UserProvider = ({ children }) => {
         })
     }, []);
 
-      const login = (user) => {
-    setUser(user);
-    setLoggedIn(true);
-  };
-  const logout = () => {
-    setUser({});
-    setLoggedIn(false);
-  };
-  const signup = (user) => {
+  const login = (user) => {
     setUser(user);
     setLoggedIn(true);
   };
 
+  const logout = () => {
+    setUser({});
+    setLoggedIn(false);
+  };
+
+  const signup = (user) => {
+    setUser(user);
+    setLoggedIn(true);
+  };
   
   return (
     
-      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, setUser }}>
+      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors }}>
         {children}
       </UserContext.Provider>
     
   )
 }
-
-
 
 export { UserContext, UserProvider }

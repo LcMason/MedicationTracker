@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import UserNavbar from './UserNavbar'
+import {Link} from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
 
-const Navbar = () => {
-const { loggedIn } = useContext(UserContext) 
 
-  if (!loggedIn) {
+const UserNavbar = () => {
+const { logout } = useContext(UserContext) 
+
+const handleLogout = () => {
+  fetch('/logout',
+  { method: 'DELETE'})
+  .then(() => {logout()})
+}
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container-fluid">
@@ -30,23 +34,13 @@ const { loggedIn } = useContext(UserContext)
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers/new">Create Reviews</Link>
           </li>
-        </ul>
-        <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" to="/signup">Sign Up</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" to="/login">Login</Link>
+          <li>
+            <Link className="nav-link active" to="/logout" onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
+      </div>
+   </nav> 
   )
-} else {
-  
-  return <UserNavbar />
-}
 } 
-
-export default Navbar
+export default UserNavbar

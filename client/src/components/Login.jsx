@@ -1,12 +1,13 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login, logout, setUser, setErrors, errors } = useContext(UserContext);
+  const { login, setErrors, errors } = useContext(UserContext);
   
 //what is the starting value of user in this file. User in useContext is returned but not deconstructed in Login.jsx
   const navigate = useNavigate();
@@ -28,23 +29,23 @@ const Login = () => {
         res.json().then(user => {
           login(user)
           navigate("/")
-        
-
         })
       }
-      
       else {
-        res.json().then((err) => {
-          // debugger;
-          console.log(err.errors)
-          setErrors(err.errors)
-        })
+        res.json().then((res) => {
+          setErrors(res.error[0])
+        })  
       }
     })
   }
-  return (
 
+  useEffect(() => {
+    return () => {
+      setErrors([])
+    }
+  },[setErrors])
 
+    return (
     <div className="container-flex">
       <div className="row justify-content-center">
       <div className="col-lg-6">
@@ -77,15 +78,14 @@ const Login = () => {
               />
             </div>
           </div>
-          <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold">
-            Login
-          </button>
-          <div className="text-light">{errors}</div>
+          <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold"> Login
+          </button> 
+          <div className="text-light fw-bolder">{errors}</div>
         </form>
       </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default Login;

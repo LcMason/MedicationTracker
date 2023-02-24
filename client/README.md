@@ -1,3 +1,56 @@
+<!-- import React, { useContext } from 'react'
+import MedicationCard from './medications/MedicationCard'
+import { MedicationContext } from './context/MedicationContext'
+
+const MedicationsList = () => {
+  const { medications } = useContext(MedicationContext)
+  const medicationCards = medications.map(medication => <MedicationCard key={medication.id} medication={medication}/>)
+
+  console.log(medications)
+
+  return (
+  <div className="container">
+    <div className="row">
+      {medicationCards}
+    </div>
+  </div>
+  )
+}
+
+export default MedicationsList -->
+
+<!-- import React from 'react'
+import medicationtracker from "./images/medicationtracker.jpg"
+
+const MedicationCard = ({medication}) => {
+const {name, form, instruction, rating} = medication
+
+  return (
+    <div className="col bg-dark">
+      <img
+        src={medicationtracker}
+        className="card-img-top img-fluid img-thumbnail"
+        alt="medication-card"
+      />
+      <div className="card-body" key={id}>
+        <h3 className="card-title fw-bolder">{name}</h3>
+        <p className="card-text">Form || {form}</p>
+        <p className="card-text">Instruction || {instruction}</p>
+        <p className="card-text">Rating || {rating}</p>
+        <div className="pb-2">
+          <i className="bi bi-star-fill text-warning"></i>
+          <i className="bi bi-star-fill text-warning"></i>
+          <i className="bi bi-star-fill text-warning"></i>
+          <i className="bi bi-star-fill text-warning"></i>
+          <i className="bi bi-star-fill text-warning"></i>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default MedicationCard -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

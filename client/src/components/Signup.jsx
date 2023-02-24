@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
@@ -29,7 +29,7 @@ const SignUp = () => {
       .then((user) => {
         if (!user.errors) {
           signup(user);
-          navigate(`/users/${user.id}/medications`);
+          navigate("/home");
         } else {
           const errorLis = user.errors.map((e, index) => <li key={index}>{e}</li>);
           setErrors(errorLis);
@@ -41,6 +41,13 @@ const SignUp = () => {
       // setPasswordConfirmation("");
       // setAge("");
   };
+
+  useEffect(() => {
+    return ()=> {
+      setErrors([])
+    }
+  },[setErrors])
+  
   return (
     <div className="container-flex">
       <div className="row justify-content-center">
@@ -109,7 +116,6 @@ const SignUp = () => {
         </form>
       </div>
       </div>
-      {/* <Body /> */}
     </div>
   );
 };

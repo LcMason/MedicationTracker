@@ -350,19 +350,3 @@ troubleshoot:
 - [Getting Started with Ruby on Rails on Render](https://render.com/docs/deploy-rails)
 - [Render Databases Guide](https://render.com/docs/databases)
 
-
-
-
-<!-- 
-
- {/* <Route path="/home" element={<Home />} />  */}
-                <Route path="/login" element={<Login />} /> 
-                {/* <Route path="/signup" element={<Signup />} />  */}
-                {/* <Route path="/medications/:id/edit" element={<MedicationEdit />} />  */}
-                {/* <Route path="/medications" element={<MedicationList />} />  */}
-                {/* <Route path="/medications/new" element={<MedicationForm />} />  */}
-                {/* <Route path="/trackers" element={<TrackerList />} />  */}
-                {/* <Route path="/trackers/new" element={<TrackerForm />} />  */}
-                {/* <Route path="/users/new" element={<UserForm />} /> */}
-                {/* <Route path="/users" element={<UserList />} /> */}
-                  -->
