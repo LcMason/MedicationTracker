@@ -6,8 +6,8 @@ import UserForm from './users/UserForm';
 import UserList from './users/UserList';
 import Home from './components/Home';
 import About from './components/About'
-
 // import UserEdit from './users/UserEdit';
+import MedicationList from './medications/MedicationList';
 import TrackerForm from './trackers/TrackerForm';
 import TrackerList from './trackers/TrackerList';
 import Login from './components/Login';
@@ -28,6 +28,7 @@ function App() {
               <Route path="/" element={<About />} /> 
               <Route path="/login" element={<Login />} /> 
               <Route path="/signup" element={<Signup />} />  
+              <Route path="/medications" element={<MedicationList />} />
               <Route path="/trackers" element={<TrackerList />} /> 
               <Route path="/trackers/new" element={<TrackerForm />} /> 
               <Route path="/users/new" element={<UserForm />} />

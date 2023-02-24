@@ -14,10 +14,10 @@ const MedicationProvider = ({ children }) => {
       fetchMedications()
     }, [])
 
-    console.log("I'm in the Medication Context")
+    console.log(medications, "I'm in the Medication Context")
 
   return (
-      <MedicationContext.Provider value={ {medications} }>
+      <MedicationContext.Provider value={ medications }>
         {children}
       </MedicationContext.Provider>
   )
