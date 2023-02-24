@@ -13,9 +13,9 @@ const MedCard = ({medication}) => {
           />
           <div className="card-body" key={id}>
             <h3 className="card-title fw-bolder">{name}</h3>
-            <p className="card-text">Form || {form}</p>
-            <p className="card-text">Instruction || {instruction}</p>
-            <p className="card-text">Rating || {rating}</p>
+            <p className="card-text text-light fw-bold">Form || {form}</p>
+            <p className="card-text text-light fw-bold">Instruction || {instruction}</p>
+            <p className="card-text text-light fw-bold">Rating || {rating}</p>
             <div className="pb-2">
               <i className="bi bi-star-fill text-warning"></i>
               <i className="bi bi-star-fill text-warning"></i>
