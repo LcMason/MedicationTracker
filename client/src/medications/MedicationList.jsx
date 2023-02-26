@@ -4,7 +4,7 @@ import MedCard from '../medications/MedCard'
 
 
 const MedicationList = () => {
-  const medications = useContext(MedicationContext)
+  const {medications} = useContext(MedicationContext)
   console.log(medications)
   const medList = medications.map(medication => <MedCard key={medication.id} medication={medication} />)
   
@@ -24,3 +24,6 @@ const MedicationList = () => {
   }
 
   export default MedicationList
+
+
+  //style the list. See line 18.

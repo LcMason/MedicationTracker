@@ -8,6 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { login, setErrors, errors } = useContext(UserContext);
+
   
 //what is the starting value of user in this file. User in useContext is returned but not deconstructed in Login.jsx
   const navigate = useNavigate();
