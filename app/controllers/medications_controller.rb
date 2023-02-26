@@ -10,23 +10,18 @@ class MedicationsController < ApplicationController
     end
    
     def update
-        medication = Medication.find_by(id: params[:id])
-        if medication
-         medication.update(medication_params)
-            render json: medication, status: :accepted
-        else
-            render json: {error: "medication not found"}, status: :not_found
-        end
+        # medication = Medication.find_by(id: params[:id])
+        @medication = find_medication
+        @medication.update!(medication_params)
+        render json: @medication, status: :accepted
+
+        
     end
 
         def destroy
-            medication = Medication.find_by(id: params[:id])
-            if medication
-                medication.destroy
+            @medication = find_medication
+                @medication.destroy
                 head :no_content
-            else
-                render json: {error: "medication not found"}, status: :not_found
-            end
         end
 
 
@@ -34,6 +29,10 @@ class MedicationsController < ApplicationController
 
     def medication_params
         params.permit(:name, :form, :instruction, :rating)
+    end
+
+    def find_medication
+       @medication = Medication.find(params[:id])
     end
 
    

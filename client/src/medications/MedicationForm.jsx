@@ -6,10 +6,10 @@ const MedicationForm = () => {
 
 const [name, setName] = useState("")
 const [form, setForm] = useState("")
+const [errors, setErrors] = useState([])
 const [instruction, setInstruction] = useState("")
 const [rating, setRating] = useState("")
   const { addMed } = useContext(MedicationContext)
-  const [errors, setErrors] = useState([])
 
   const navigate = useNavigate()
 
@@ -36,6 +36,7 @@ const [rating, setRating] = useState("")
       }
       else {
         res.json().then((res) => {
+          
           setErrors(res.error[0])
         })  
       }
@@ -113,7 +114,7 @@ const [rating, setRating] = useState("")
         </div>
         <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold"> Add Medication
         </button> 
-        <div className="text-light fw-bolder">{errors}</div>
+        <div className="text-dark fw-bolder">{errors}</div>
       </form>
     </div>
     </div>
