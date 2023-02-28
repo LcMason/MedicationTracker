@@ -1,29 +1,29 @@
 class MedicationsController < ApplicationController
 
+
     def index
-        render json: Medication.all
+        render json: @current_user.medications
+    end
+
+    def show
+        @medication = find_medication
+        render json: @medication, status: :ok
     end
  
     def create
-        medication = Medication.create!(medication_params)
-        render json: medication, status: :created 
+        @medication = current_user.medication.create!(medication_params)
+        render json: @medication, status: :created 
     end
    
     def update
-        # medication = Medication.find_by(id: params[:id])
-        @medication = find_medication
-        @medication.update!(medication_params)
-        render json: @medication, status: :accepted
-
-        
+        @medication = current_user.medication.update!(medication_params)
+        render json: @medication, status: :accepted 
     end
 
-        def destroy
-            @medication = find_medication
-                @medication.destroy
-                head :no_content
-        end
-
+    def destroy
+        @medication = current_user.medication.destroy
+        head :no_content
+    end
 
     private
 
@@ -34,6 +34,4 @@ class MedicationsController < ApplicationController
     def find_medication
        @medication = Medication.find(params[:id])
     end
-
-   
 end

@@ -15,6 +15,7 @@ import { MedicationProvider } from './context/MedicationContext';
 import { TrackerProvider } from './context/TrackerContext';
 import { UserProvider } from './context/UserContext';
 import MedicationForm from './medications/MedicationForm';
+import UserMedication from './users/UserMedication';
 
 function App() {
   return (
@@ -28,11 +29,13 @@ function App() {
               <Route path="/login" element={<Login />} /> 
               <Route path="/signup" element={<Signup />} />  
               <Route path="/medications" element={<MedicationList />} />
+              <Route path="/users/:user_id/medications" element={<UserMedication />} />
               <Route path="/medications/new" element={<MedicationForm />} />
               <Route path="/trackers" element={<TrackerList />} /> 
               <Route path="/trackers/new" element={<TrackerForm />} /> 
               <Route path="/users/new" element={<UserForm />} />
               <Route path="/users" element={<UserList />} />
+              {/* <Route path="/users" element={<UserList />} /> */}
             </Routes> 
         </TrackerProvider>
       </MedicationProvider>

@@ -1,26 +1,28 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MedicationContext} from '../context/MedicationContext'
+import { UserContext } from "../context/UserContext";
 
 const MedicationForm = () => {
 
-const [name, setName] = useState("")
-const [form, setForm] = useState("")
-const [errors, setErrors] = useState([])
-const [instruction, setInstruction] = useState("")
-const [rating, setRating] = useState("")
+  const [name, setName] = useState("")
+  const [form, setForm] = useState("")
+  const [errors, setErrors] = useState([]);
+  const [instruction, setInstruction] = useState("")
+  const [rating, setRating] = useState("")
   const { addMed } = useContext(MedicationContext)
+  const { user } = useContext(UserContext)
 
   const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
     
-    fetch("/medications/new", {
+    fetch("/medications", {
       method: "POST", 
       headers: {
       "Accept": "application/json",
-    "Content-Type": "application/json" },
+      "Content-Type": "application/json" },
       body: JSON.stringify({
         name,
         form,
@@ -31,17 +33,24 @@ const [rating, setRating] = useState("")
       if (res.ok) {
         res.json().then(medication => {
           addMed(medication)
-          navigate("/user")
+          navigate(`/users/${user.id}/medications`)
+          //navigate to users page
         })
       }
       else {
-        res.json().then((res) => {
-          
-          setErrors(res.error[0])
+        res.json().then((errorData) => {
+          setErrors(errorData.errors);
         })  
-      }
-    })
-  }
+        // const errorLis = medicaion.errors.map(e, ind) => <li key={ind}>{e}</li>     
+        // res.json().then((res) => {
+          
+        //   setErrors(res.error[0])
+        }
+      // }
+    // })
+  })
+
+}
 
 
   useEffect(() => {
@@ -49,6 +58,7 @@ const [rating, setRating] = useState("")
       setErrors([])
     }
   },[setErrors])
+
 
 
 

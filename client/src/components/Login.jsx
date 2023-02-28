@@ -29,7 +29,7 @@ const Login = () => {
       if (res.ok) {
         res.json().then(user => {
           login(user)
-          navigate("/")
+          navigate(`/users/${user.id}/medications`)
         })
       }
       else {

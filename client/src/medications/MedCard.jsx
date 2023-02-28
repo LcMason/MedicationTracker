@@ -12,7 +12,7 @@ const MedCard = ({medication}) => {
             alt="medication-card"
           />
           <div className="card-body" key={id}>
-            <h3 className="card-title fw-bolder">{name}</h3>
+            <h3 className="card-title text-light fw-bolder">{name}</h3>
             <p className="card-text text-light fw-bold">Form : {form}</p>
             <p className="card-text text-light fw-bold">Instruction : {instruction}</p>
             <p className="card-text text-light fw-bold">Rating : {rating}</p>
