@@ -5,7 +5,6 @@ import pills from '../images/pills.jpg'
 const UserMedication = () => {
 
 const { user } = useContext(UserContext)
-console.log(user)
 
   return (
     <div className="col bg-dark text-light"> 

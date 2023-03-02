@@ -11,7 +11,7 @@ const UserProvider = ({ children }) => {
         fetch("/me")
         .then((resp => resp.json()))
         .then(user => {
-          setUser(user)
+          login(user)
         })
     }, []);
 

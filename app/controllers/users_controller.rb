@@ -4,7 +4,7 @@ class UsersController < ApplicationController
    def index
     render json: User.all
    end
-   
+
     # POST /signup
     def create
         user = User.create!(user_params)
@@ -26,6 +26,8 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:username, :password, :password_confirmation, :age)
     end
+
+    
 end
 
 

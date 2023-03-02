@@ -4,7 +4,7 @@ import { UserContext } from '../context/UserContext'
 
 
 const UserNavbar = () => {
-const { logout } = useContext(UserContext) 
+const { logout, user } = useContext(UserContext) 
 
 const handleLogout = () => {
   fetch('/logout',
@@ -26,7 +26,7 @@ const handleLogout = () => {
             <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications">Medications</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications/new">Create Medication</Link>
+            <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/medications/new`}>Create Medication</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers">Trackers</Link>

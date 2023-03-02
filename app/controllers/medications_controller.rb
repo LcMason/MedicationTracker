@@ -1,8 +1,8 @@
 class MedicationsController < ApplicationController
 
-
     def index
-        render json: @current_user.medications
+        render json: current_user.medications
+
     end
 
     def show
@@ -11,7 +11,7 @@ class MedicationsController < ApplicationController
     end
  
     def create
-        @medication = current_user.medication.create!(medication_params)
+        @medication = Medication.create!(medication_params)
         render json: @medication, status: :created 
     end
    
@@ -32,6 +32,6 @@ class MedicationsController < ApplicationController
     end
 
     def find_medication
-       @medication = Medication.find(params[:id])
+       @medication = Medication.find_by(id: params[:id])
     end
 end

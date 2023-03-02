@@ -21,9 +21,9 @@ const { loggedIn } = useContext(UserContext)
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications">Medications</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications/new">Create Medication</Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers">Trackers</Link>
           </li>

@@ -14,6 +14,11 @@ const TrackerProvider = ({ children }) => {
         .then(tracker => setTrackers(tracker))
     }, [])
 
+    const addTracker = (tracker) => {
+        setTrackers([...trackers, tracker])
+               
+      }
+
     return (
         <TrackerContext.Provider value={trackers}>
         {children}

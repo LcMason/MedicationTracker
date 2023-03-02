@@ -1,9 +1,26 @@
-import React from 'react'
+// import React, {useState, useEffect, useContext} from 'react'
+// import { useNavigate } from 'react-router-dom'
+// import { MedicationContext } from '../context/MedicationContext'
+// import { UserContext } from '../context/UserContext'
 
-const TrackerForm = () => {
-  return (
-    <div>TrackerForm</div>
-  )
-}
+// const TrackerForm = () => {
+//   const [reviews, setReviews] = useState("")
+//   const [frequency, setFrequency] = useState("")
+//   const [quantity, setQuantity] = useState("")
 
-export default TrackerForm
+//   const { user } = useContext(UserContext)
+//   const navigate = useNavigate()
+
+
+
+
+
+
+
+
+//   return (
+//     <div>TrackerForm</div>
+//   )
+// }
+
+// export default TrackerForm
