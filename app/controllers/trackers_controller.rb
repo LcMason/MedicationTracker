@@ -4,19 +4,12 @@ class TrackersController < ApplicationController
         render json: Tracker.all
     end
  
-    def create
-        # tracker = Tracker.find_by(id: params[:id])
-        # if tracker.valid?
-        # # tracker.create!(tracker_params)
-            tracker = Tracker.create(tracker_params)
-            # if tracker.valid?
-            render json: tracker, status: :created 
-        # else
-            # render json: {error: tracker.errors.full_messages }, status: :unprocessable_entity
-        # end
-    end
+  
 
-    
+    def create
+        @tracker = current_user.tracker.create!(tracker_params)
+        render json: @tracker, status: :created 
+    end
 
 #     def update
 #         patient = Patient.find_by(id: params[:id])
@@ -33,6 +26,10 @@ class TrackersController < ApplicationController
     private
     def tracker_params
         params.permit(:review, :quantity, :frequency)
+    end
+
+    def find_tracker
+        @tracker = Tracker.find_by(id: params[:id])
     end
 # end
 
