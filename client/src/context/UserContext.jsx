@@ -12,8 +12,11 @@ const UserProvider = ({ children }) => {
         .then((resp => resp.json()))
         .then(user => {
           login(user)
+          setLoggedIn(true)
+          console.log(user, "userContext")
         })
     }, []);
+
 
   const login = (user) => {
     setUser(user);
@@ -29,10 +32,25 @@ const UserProvider = ({ children }) => {
     setUser(user);
     setLoggedIn(true);
   };
+
+  const handleAddUserMeds = (medication) => {
+    setUser({...user, medications: [...user.medications, medication]})
+  }
+
+  const handleEditUserTracker = (newReview) => {
+    setUser({...user, trackers: [...user.trackers, newReview]})
+  }
+
+  const handleAddUserTracker = (tracker) => {
+    setUser({...user, trackers: [...user.trackers, tracker]})
+
+  }
+    
+ 
   
   return (
     
-      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors }}>
+      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, handleAddUserMeds, handleEditUserTracker, handleAddUserTracker }}>
         {children}
       </UserContext.Provider>
     

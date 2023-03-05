@@ -17,9 +17,9 @@ class UsersController < ApplicationController
             render json: @current_user
         end
 
-        def user_medications
-            render json: current_user.medications
-          end
+        # def user_medications
+        #     render json: current_user.medications
+        #   end
 
     private
 

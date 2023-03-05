@@ -6,6 +6,7 @@ const UserMedication = () => {
 
 const { user } = useContext(UserContext)
 
+// debugger
   return (
     <div className="col bg-dark text-light"> 
     {user.medications.map((medication) => (

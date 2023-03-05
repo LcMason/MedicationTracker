@@ -11,7 +11,8 @@ const MedicationForm = () => {
   const [instruction, setInstruction] = useState("")
   const [rating, setRating] = useState("")
   const { addMed } = useContext(MedicationContext)
-  const { user } = useContext(UserContext)
+  const { user, handleAddUserMeds } = useContext(UserContext)
+
 
   const [errors, setErrors] = useState([]);
 
@@ -38,25 +39,8 @@ const MedicationForm = () => {
         res.json().then(medication => {
           console.log(medication)
           addMed(medication)
+          handleAddUserMeds(medication)
           navigate(`/users/${user.id}/medications`)
-
-          //fetch
-          // fetch(`/users/${user.id}/trackers`, {
-          //   method: "POST", 
-          //   headers: {
-          //   "Accept": "application/json",
-          //   "Content-Type": "application/json" },
-          //   body: JSON.stringify({
-          //     review,
-          //     frequency,
-          //     quantity,
-          //     user_id: user.id,
-          //     medication_id: newMed.id
-          //   })
-          //   .then(res => res.json())
-          //   .then((newTracker) => {})
-          // })
-
         })
       }
       else {
@@ -67,8 +51,6 @@ const MedicationForm = () => {
         }
   })
 }
-
-
   useEffect(() => {
     return () => {
       setErrors([])
@@ -141,55 +123,7 @@ const MedicationForm = () => {
         </div>
         <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold"> Add Medication
         </button> 
-        {/* <div className="text-light fw-bolder">{errors}</div>
-      </form>
-      <div> 
-        <br></br>
-      </div>
-      <form className="form my-5 justify-content-center text-center bg-dark border-dark p-3" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <div className="mb-3 input-group">
-          <span className="input-group-text">Name</span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Medication"
-              aria-label="Username"
-              id="username"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-        </div> */}
-{/* 
-        <div className="form-group">
-          <div className="mb-3 input-group">
-          <span className="input-group-text">Name</span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Medication"
-              aria-label="Username"
-              id="username"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="form-group">
-          <div className="mb-3 input-group">
-          <span className="input-group-text">Name</span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Medication"
-              aria-label="Username"
-              id="username"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-        </div> */}
+        <div>{errors}</div>
         </form>
 
     </div>

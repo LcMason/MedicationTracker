@@ -23,16 +23,16 @@ const handleLogout = () => {
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav me-auto">
           <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications">Medications</Link>
+            <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/medications`}>Medications</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/medications/new`}>Create Medication</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers">Trackers</Link>
+            <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers`}>Trackers</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers/new">Create Reviews</Link>
+            <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers/new`}>Create Reviews</Link>
           </li>
           <li>
             <Link className="nav-link active" to="/logout" onClick={handleLogout}>Logout</Link>

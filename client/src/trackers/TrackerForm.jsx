@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { MedicationContext } from '../context/MedicationContext'
+// import { MedicationContext } from '../context/MedicationContext'
 import { TrackerContext } from '../context/TrackerContext'
 import { UserContext } from '../context/UserContext'
 
@@ -9,27 +9,29 @@ const TrackerForm = () => {
   const [frequency, setFrequency] = useState("")
   const [quantity, setQuantity] = useState("")
   const [medication_id, setMedicationId] = useState("");
-  const { user } = useContext(UserContext)
+  const { user, handleAddUserTracker } = useContext(UserContext)
   const { addTracker } = useContext(TrackerContext)
-  const { medications } = useContext(MedicationContext)
+  // const { medications } = useContext(MedicationContext)
   const navigate = useNavigate()
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    if(medications.length > 0) {
-      setMedicationId(medications[0].id) 
+    if(user.medications.length > 0) {
+      setMedicationId(user.medications[0].id) 
     }
-  }, [medications]) 
+  }, [user.medications]) 
 
 
   function handleSubmit(e) {
     e.preventDefault();
-    addTracker({review, medication_id })
+   
 
     const newTracker = {
       review,
       frequency,
-      quantity
+      quantity,
+      medication_id,
+      user_id: user.id
     }
 
     fetch(`/users/${user.id}/trackers`, {
@@ -44,7 +46,8 @@ const TrackerForm = () => {
         res.json().then(tracker => {
           console.log(tracker)
           addTracker(tracker)
-          navigate(`/users/${user.id}/trackers`)
+          handleAddUserTracker(tracker)
+          navigate(`/users/${user.id}/medications`)
         })
       }
       else {
@@ -56,24 +59,29 @@ const TrackerForm = () => {
   })
 }
 
-  const listMeds = medications.map((med) =>
+  const listMeds = user.medications.map((med) =>
   <option value={med.id} key={med.id}>{med.name}</option>
   
   )
-  console.log(listMeds)
+  useEffect(() => {
+    return () => {
+      setErrors([])
+    }
+  },[setErrors])
+  // console.log(listMeds)
     return (
       <div className="container-flex">
       <div className="row justify-content-center">
       <div className="col-lg-6">
-        <br></br>
-      <div>
-          <label htmlFor="medication_id"> Select Medication: </label>
-        <select name="medList" id="medication_id" onChange={e => setMedicationId(e.target.value)}>{listMeds}</select>
-        </div> 
-        <br></br>
-        <br></br>
+      
         <h3>Tracking Your Health</h3>
         <form className="form my-5 justify-content-center text-center bg-dark border-dark p-3" onSubmit={handleSubmit}>
+        <div className="form-group">
+            <div className="mb-3 input-group">
+          <span className="input-group-text" > Select Medication </span>
+          <select  id="medication_id" className="form-control" defaultValue={medication_id} onChange={(e) => setMedicationId(e.target.value)}>{listMeds}</select>
+        </div>
+        </div> 
           <div className="form-group">
             <div className="mb-3 input-group">
             <span className="input-group-text">Review</span>
@@ -116,9 +124,12 @@ const TrackerForm = () => {
               />
             </div>
             </div>
+            <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold"> Add Tracker
+        </button> 
+            <div className="text-light">
+              {errors}
+            </div>
             </form>
-            {/* place image after form  */}
-            {/* place footer  */}
           </div>
         </div>
       </div>

@@ -1,14 +1,31 @@
 class MedicationsController < ApplicationController
+    before_action :authorize
+
+   
+
+    # def index
+    #     if @current_user
+    #         render json: current_user.medications
+    #     else
+    #         render json: { message: "Unauthorized" }, status: :unauthorized
+    #     end
+    # end
 
     def index
-        render json: current_user.medications
-
+        if params[:user_id]
+            @user = User.find_by_id(params[:user_id])
+            render json: @user.medications, status: :ok
+        else
+            render json: { message: "Unauthorized" }, status: :unauthorized
+        end
     end
 
-    def show
-        @medication = find_medication
-        render json: @medication, status: :ok
-    end
+    
+
+    # def show
+    #     @medication = find_medication
+    #     render json: medication, :include :user, status: :ok
+    # end
  
     def create
         @medication = Medication.create!(medication_params)

@@ -19,20 +19,6 @@ const { loggedIn } = useContext(UserContext)
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav me-auto">
           <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications">Medications</Link>
-          </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/medications/new">Create Medication</Link>
-          </li> */}
-          <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers">Trackers</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to="/trackers/new">Create Reviews</Link>
-          </li>
-        </ul>
-        <ul className="navbar-nav me-auto">
-          <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" to="/signup">Sign Up</Link>
           </li>
           <li className="nav-item">
