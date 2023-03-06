@@ -1,5 +1,5 @@
 class TrackersController < ApplicationController
-skip_before_action :authorize, :only :index
+skip_before_action :authorize
     # def index
     #     if params[:user_id]
     #         @user = User.find_by_id(params[:user_id])
@@ -28,10 +28,6 @@ skip_before_action :authorize, :only :index
     private
     def tracker_params
         params.permit(:review, :quantity, :frequency, :user_id, :medication_id)
-    end
-
-    def find_tracker
-        @tracker = Tracker.find_by(id: params[:id])
     end
 # end
 

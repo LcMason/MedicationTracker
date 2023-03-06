@@ -12,8 +12,6 @@ const MedicationForm = () => {
   const [rating, setRating] = useState("")
   const { addMed } = useContext(MedicationContext)
   const { user, handleAddUserMeds } = useContext(UserContext)
-
-
   const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate()
@@ -44,8 +42,8 @@ const MedicationForm = () => {
         })
       }
       else {
-        res.json().then((data) => {
-          const errorLis = data.errors.map((e, ind) => <li key={ind}>{e}</li>)
+        res.json().then((errorData) => {
+          const errorLis = errorData.errors.map((e, ind) => <li key={ind}>{e}</li>)
           setErrors(errorLis);
         })  
         }

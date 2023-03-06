@@ -12,14 +12,10 @@ class MedicationsController < ApplicationController
     # end
 
     def index
-        if params[:user_id]
-            @user = User.find_by_id(params[:user_id])
-            render json: @user.medications, status: :ok
-        else
-            render json: { message: "Unauthorized" }, status: :unauthorized
-        end
+            render json: current_user.medications, status: :ok
     end
 
+   
     
 
     # def show

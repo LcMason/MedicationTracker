@@ -35,7 +35,7 @@ const handleLogout = () => {
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers/new`}>Create Reviews</Link>
           </li>
           <li>
-            <Link className="nav-link active" to="/logout" onClick={handleLogout}>Logout</Link>
+            <Link className="nav-link active" to="/login" onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
       </div>

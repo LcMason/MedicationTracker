@@ -20,7 +20,7 @@ const TrackerProvider = ({ children }) => {
       }
 
     return (
-        <TrackerContext.Provider value={{trackers, addTracker }}>
+        <TrackerContext.Provider value={{trackers, addTracker}}>
         {children}
       </TrackerContext.Provider>
     )
