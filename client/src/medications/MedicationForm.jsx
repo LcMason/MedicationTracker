@@ -83,7 +83,7 @@ const MedicationForm = () => {
               className="form-control"
               placeholder="Form"
               aria-label="Password"
-              id="password"
+              // id="password"
               value={form}
               onChange={(e) => setForm(e.target.value)}
             />
@@ -97,7 +97,7 @@ const MedicationForm = () => {
               className="form-control"
               placeholder="Instructions"
               aria-label="Password"
-              id="password"
+              // id="password"
               value={instruction}
               onChange={(e) => setInstruction(e.target.value)}
             />
@@ -110,7 +110,7 @@ const MedicationForm = () => {
               className="form-control"
               placeholder="Rating"
               aria-label="Password"
-              id="password"
+              // id="password"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
             />

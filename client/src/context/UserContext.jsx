@@ -12,8 +12,6 @@ const UserProvider = ({ children }) => {
         .then((resp => resp.json()))
         .then(user => {
           login(user)
-          setLoggedIn(true)
-          console.log(user, "userContext")
         })
     }, []);
 
@@ -45,12 +43,19 @@ const UserProvider = ({ children }) => {
     setUser({...user, trackers: [...user.trackers, tracker]})
 
   }
+  
+  const handleDeleteUserTracker = (id) => {
+    const deleteTracker = user.trackers.filter(tracker => tracker.id !== id)
+      setUser({...user, trackers: deleteTracker})
+
+  }
+
     
  
   
   return (
     
-      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, handleAddUserMeds, handleEditUserTracker, handleAddUserTracker }}>
+      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, handleAddUserMeds, handleEditUserTracker, handleAddUserTracker, handleDeleteUserTracker }}>
         {children}
       </UserContext.Provider>
     

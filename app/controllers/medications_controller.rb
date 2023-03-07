@@ -1,5 +1,7 @@
 class MedicationsController < ApplicationController
-    before_action :authorize
+    # before_action :authorize
+    skip_before_action :authorize
+    before_action :find_medication, only: [:update, :destroy]
 
    
 
@@ -11,10 +13,22 @@ class MedicationsController < ApplicationController
     #     end
     # end
 
-    def index
-            render json: current_user.medications, status: :ok
-    end
 
+
+    # def index
+    #     if @current_user
+    #         render json: current_user.medications, status: :ok
+    #     else
+    #         render json: 
+    # end
+
+    def index
+        if current_user
+            render json: current_user.medications
+        else
+            render json: Medication.all, status: :ok
+        end
+    end
    
     
 

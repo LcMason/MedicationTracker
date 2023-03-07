@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
-// import { MedicationContext } from '../context/MedicationContext'
 import { TrackerContext } from '../context/TrackerContext'
 import { UserContext } from '../context/UserContext'
 
@@ -11,7 +10,7 @@ const TrackerForm = () => {
   const [medication_id, setMedicationId] = useState("");
   const { user, handleAddUserTracker } = useContext(UserContext)
   const { addTracker } = useContext(TrackerContext)
-  // const { medications } = useContext(MedicationContext)
+
   const navigate = useNavigate()
   const [errors, setErrors] = useState([]);
 
@@ -42,9 +41,7 @@ const TrackerForm = () => {
         body: JSON.stringify(newTracker)
     }).then((res) => { 
       if (res.ok) {
-        console.log(res)
         res.json().then(tracker => {
-          console.log(tracker)
           addTracker(tracker)
           handleAddUserTracker(tracker)
           navigate(`/users/${user.id}/medications`)

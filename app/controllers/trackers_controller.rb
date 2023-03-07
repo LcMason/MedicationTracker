@@ -13,15 +13,24 @@ skip_before_action :authorize
         render json: Tracker.all
     end
 
+    # def create
+    #     @tracker = current_user.trackers.create!(tracker_params)
+    #     render json: @tracker, status: :created 
+    # end
+
     def create
-        @tracker = current_user.trackers.create!(tracker_params)
+        @tracker = Tracker.create!(tracker_params)
         render json: @tracker, status: :created 
     end
 
-    # def create
-    #     @tracker = Tracker.create!(tracker_params)
-    #     render json: @tracker include: :user, status: :created 
-    # end
+    def destroy
+        if @tracker.user_id == current_user.id 
+        @tracker.destroy
+        head :no_content
+        else
+            render json: {message: "Cannot Delete"}
+        end
+    end
 
 # # Pass medication to tracker controller to have access to create a new review
 

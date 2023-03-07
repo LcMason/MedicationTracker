@@ -19,8 +19,13 @@ const TrackerProvider = ({ children }) => {
                
       }
 
+      const handleDeleteTracker = (id) => {
+        const deleteTracker = trackers.filter(tracker => tracker.id !== id)
+        setTrackers(deleteTracker)
+      }
+
     return (
-        <TrackerContext.Provider value={{trackers, addTracker}}>
+        <TrackerContext.Provider value={{trackers, addTracker, handleDeleteTracker}}>
         {children}
       </TrackerContext.Provider>
     )
