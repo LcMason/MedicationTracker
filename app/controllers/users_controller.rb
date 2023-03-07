@@ -14,12 +14,9 @@ class UsersController < ApplicationController
 
         # GET /me 
         def show
-            render json: @current_user, include: ['trackers', 'trackers.medication', 'medications']
+            render json: @current_user
         end
 
-        # def user_medications
-        #     render json: current_user.medications
-        #   end
 
     private
 

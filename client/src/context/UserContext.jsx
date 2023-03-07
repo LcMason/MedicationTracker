@@ -43,7 +43,7 @@ const UserProvider = ({ children }) => {
     setUser({...user, trackers: [...user.trackers, tracker]})
 
   }
-  
+  //deleting from nested property 
   const handleDeleteUserTracker = (id) => {
     const deleteTracker = user.trackers.filter(tracker => tracker.id !== id)
       setUser({...user, trackers: deleteTracker})
