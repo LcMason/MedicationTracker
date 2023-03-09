@@ -1,10 +1,19 @@
 import React, {useContext} from 'react'
 import { UserContext } from '../context/UserContext'
 import pills from '../images/pills.jpg'
+import { Link } from 'react-router-dom'
 
 const UserMedication = () => {
 
-const { user } = useContext(UserContext)
+const { user,  handleDeleteUserMed, handleEditUserMed  } = useContext(UserContext)
+
+const handleDeleteClick = (id) => {
+  fetch(`/users/${user.id}/medications/${id}`, {
+    method: "DELETE", 
+    }).then(() => {
+      handleDeleteUserMed(id)
+    })
+}
 
 
   return (
@@ -27,6 +36,14 @@ const { user } = useContext(UserContext)
           <i className="bi bi-star-fill text-warning"></i>
           <i className="bi bi-star-fill text-warning"></i>
         </div>
+        <Link
+              className="btn btn-sm text-light"
+              aria-current="page"
+              to="#"
+              onClick= {() => {handleDeleteClick(medication.id)}}
+            >
+              Delete
+            </Link>
       </div>
       </div>
       ))}

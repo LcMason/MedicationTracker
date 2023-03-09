@@ -1,19 +1,17 @@
 import React, {useContext} from 'react'
-import { TrackerContext } from '../context/TrackerContext'
+// import { TrackerContext } from '../context/TrackerContext'
 import { UserContext } from '../context/UserContext'
 import { Link } from 'react-router-dom'
 import pills from "../images/pills.jpg"
 
 
 const TrackerList = () => {
-  const { handleDeleteTracker } = useContext(TrackerContext)
-  const { user, handleDeleteUserTracker } = useContext(UserContext)
+  const { user, handleDeleteUserTracker, handleEditUserTracker } = useContext(UserContext)
 
 const handleDeleteClick = (id) => {
   fetch(`/users/${user.id}/trackers/${id}`, {
     method: "DELETE", 
     }).then(() => {
-      handleDeleteTracker(id)
       handleDeleteUserTracker(id)
     })
 }

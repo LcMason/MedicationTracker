@@ -13,14 +13,9 @@ const MedicationProvider = ({ children }) => {
     }, [])
 
     const addMed = (medication) => {
-      setMedications([...medications, medication])
-             
+      setMedications([...medications, medication])      
     }
-      
-      
-
- 
-  
+    
   return (
       <MedicationContext.Provider value={{ medications, addMed }}>
         {children}

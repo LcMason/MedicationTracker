@@ -24,6 +24,7 @@ skip_before_action :authorize
     end
 
     def destroy
+        @tracker = Tracker.find_by(id: params[:id])
         if @tracker.user_id == current_user.id 
         @tracker.destroy
         head :no_content

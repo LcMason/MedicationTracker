@@ -1,8 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react'
+// import { UserContext } from '../context/UserContext'
 import pills from '../images/pills.jpg'
 
 const MedCard = ({medication}) => {
     const {id, name, form, instruction, rating} = medication
+ 
+
+    // const handleDeleteClick = (id) => {
+    //   fetch(`/users/${user.id}/medications/${id}`, {
+    //     method: "DELETE", 
+    //     }).then(() => {
+    //       handleDeleteUserMed(id)
+    //     })
+    // }
+    
     
       return (
         <div className="col bg-dark">
@@ -23,6 +34,14 @@ const MedCard = ({medication}) => {
               <i className="bi bi-star-fill text-warning"></i>
               <i className="bi bi-star-fill text-warning"></i>
             </div>
+            {/* <Link
+              className="btn btn-sm text-light"
+              aria-current="page"
+              to="#"
+              onClick= {() => {handleDeleteClick(medication.id)}}
+            >
+              Delete
+            </Link> */}
           </div>
         </div>
       )
