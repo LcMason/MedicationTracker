@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react'
 const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
-    const [user, setUser] = useState({trackers:[]});
+    const [user, setUser] = useState({trackers:[], medications:[]});
     const [loggedIn, setLoggedIn] = useState(false);
     const [errors, setErrors] = useState([]);
 

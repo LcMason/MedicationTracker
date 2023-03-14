@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const UserMedication = () => {
 
-const { user,  handleDeleteUserMed } = useContext(UserContext)
+const { user, handleDeleteUserMed } = useContext(UserContext)
 
 const handleDeleteClick = (id) => {
   fetch(`/users/${user.id}/medications/${id}`, {

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MedicationContext} from '../context/MedicationContext'
 import { UserContext } from "../context/UserContext";
-// import Errors from "../Errors/Errors";
 
 const MedicationForm = () => {
 
@@ -83,7 +82,6 @@ const MedicationForm = () => {
               className="form-control"
               placeholder="Form"
               aria-label="Password"
-              // id="password"
               value={form}
               onChange={(e) => setForm(e.target.value)}
             />
@@ -97,7 +95,6 @@ const MedicationForm = () => {
               className="form-control"
               placeholder="Instructions"
               aria-label="Password"
-              // id="password"
               value={instruction}
               onChange={(e) => setInstruction(e.target.value)}
             />
@@ -110,7 +107,6 @@ const MedicationForm = () => {
               className="form-control"
               placeholder="Rating"
               aria-label="Password"
-              // id="password"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
             />
@@ -121,7 +117,7 @@ const MedicationForm = () => {
         </div>
         <button type="submit" className="btn bg-warning p-2 btn-outline-primary fw-bold"> Add Medication
         </button> 
-        <div>{errors}</div>
+        <div className="text-light">{errors}</div>
         </form>
 
     </div>
