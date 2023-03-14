@@ -1,6 +1,6 @@
 class MedicationsController < ApplicationController
     # before_action :authorize
-    skip_before_action :authorize
+    skip_before_action :authorize, only: :index
     before_action :find_medication, only: [:update, :destroy]
 
    
@@ -43,8 +43,9 @@ class MedicationsController < ApplicationController
     end
    
     def update
-        @medication = current_user.medication.update!(medication_params)
-        render json: @medication, status: :accepted 
+        find_medication
+        @medication.update!(medication_params)
+        render json: @medication, status: :accepted
     end
 
     def destroy

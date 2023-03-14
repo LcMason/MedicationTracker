@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const UserMedication = () => {
 
-const { user,  handleDeleteUserMed, handleEditUserMed  } = useContext(UserContext)
+const { user,  handleDeleteUserMed } = useContext(UserContext)
 
 const handleDeleteClick = (id) => {
   fetch(`/users/${user.id}/medications/${id}`, {
@@ -14,7 +14,6 @@ const handleDeleteClick = (id) => {
       handleDeleteUserMed(id)
     })
 }
-
 
   return (
     <div className="col bg-dark text-light"> 
@@ -37,9 +36,16 @@ const handleDeleteClick = (id) => {
           <i className="bi bi-star-fill text-warning"></i>
         </div>
         <Link
+     className="btn btn-sm btn-dark py-2"
+     aria-current="page"
+     to={`/users/${user.id}/medications/${medication.id}/edit`}
+     >
+     Edit
+     </Link> 
+        <Link
               className="btn btn-sm text-light"
               aria-current="page"
-              to="#"
+              to={`/users/${user.id}/medications`}
               onClick= {() => {handleDeleteClick(medication.id)}}
             >
               Delete

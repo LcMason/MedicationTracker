@@ -15,9 +15,14 @@ const MedicationProvider = ({ children }) => {
     const addMed = (medication) => {
       setMedications([...medications, medication])      
     }
+
+    const handleEditMed = (editMed) => {
+      const editMeds = medications.map((medication) => (medication.id === editMed.id ? editMed : medication))
+      setMedications(editMeds)
+    }
     
   return (
-      <MedicationContext.Provider value={{ medications, addMed }}>
+      <MedicationContext.Provider value={{ medications, addMed, handleEditMed }}>
         {children}
       </MedicationContext.Provider>
   )

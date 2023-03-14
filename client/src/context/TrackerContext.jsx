@@ -2,18 +2,12 @@ import { useEffect, useState, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
-
-
 const TrackerContext = createContext();
 
 const TrackerProvider = ({ children }) => {
     const [trackers, setTrackers] = useState([]);
-    const [reviews, setReviews ] = useState([]);
     const { user } = useContext(UserContext)
     const navigate = useNavigate()
-
-
-
 
     useEffect(() => {
         fetch('/trackers')                         
@@ -22,19 +16,18 @@ const TrackerProvider = ({ children }) => {
     }, [])
 
     const addTracker = (tracker) => {
-        setTrackers([...trackers, tracker])
-               
+        setTrackers([...trackers, tracker])         
       }
 
-      const updateReview = review => {
-        const copyOfReviews = [...reviews];
-        const r = reviews.find(r => r.id === review.id);
-        const rIndex = reviews.indexOf(r);
-        copyOfReviews.splice(rIndex, 1, review);
-        setReviews(copyOfReviews);
+      const updateTracker = tracker => {
+        const copyOfTrackers = [...trackers];
+        const t = trackers.find(t => t.id === tracker.id);
+        const tIndex = trackers.indexOf(t);
+        copyOfTrackers.splice(tIndex, 1, tracker);
+        setTrackers(copyOfTrackers);
     }
 
-       const editReview = (review, id) => {
+       const handleEditUserTracker = (review, id) => {
         fetch(`/users/${user.id}/trackers/${id}`, {
         method: "PATCH",
         headers: {
@@ -44,21 +37,14 @@ const TrackerProvider = ({ children }) => {
     })
         .then((resp) => resp.json())
         .then(review => {
-            updateReview(review);
-            navigate(`/users/${id}/trackers`)
+            updateTracker(review);
+            navigate(`/users/${user.id}/trackers`)
         })
       
        }
 
     return (
-
-
-
-
-
-
-      
-        <TrackerContext.Provider value={{trackers, addTracker}}>
+        <TrackerContext.Provider value={{trackers, addTracker, handleEditUserTracker}}>
         {children}
       </TrackerContext.Provider>
     )

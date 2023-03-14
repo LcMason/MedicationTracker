@@ -40,12 +40,10 @@ const UserProvider = ({ children }) => {
     setUser({...user, medications: deleteMed})
   }
 
-  const handleEditUserMed = (newMed) => {
-    setUser({...user, medications: [...user.medications, newMed]})
-  }
-
-  const handleEditUserTracker = (newReview) => {
-    setUser({...user, trackers: [...user.trackers, newReview]})
+  const handleEditUserMed = (editMed) => {
+    const editMeds = user.medications.map((medication) => (medication.id === editMed.id ? editMed : medication))
+    console.log(editMed,"handle edit user in User Context")
+    setUser({...user, medications: editMeds})
   }
 
   const handleAddUserTracker = (tracker) => {
@@ -60,7 +58,7 @@ const UserProvider = ({ children }) => {
 
   return (
     
-      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, handleAddUserMeds, handleEditUserTracker, handleAddUserTracker, handleDeleteUserTracker, handleDeleteUserMed, handleEditUserMed }}>
+      <UserContext.Provider value={{user, login, loggedIn, logout, signup, errors, setErrors, handleAddUserMeds, handleAddUserTracker, handleDeleteUserTracker, handleDeleteUserMed, handleEditUserMed }}>
         {children}
       </UserContext.Provider>
     

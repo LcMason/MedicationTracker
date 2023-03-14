@@ -14,6 +14,7 @@ import { MedicationProvider } from './context/MedicationContext';
 import { TrackerProvider } from './context/TrackerContext';
 import { UserProvider } from './context/UserContext';
 import MedicationForm from './medications/MedicationForm';
+import EditMedicationForm from './medications/EditMedicationForm';
 import UserMedication from './users/UserMedication';
 
 function App() {
@@ -27,10 +28,12 @@ function App() {
               <Route path="/" element={<Home />} /> 
               <Route path="/login" element={<Login />} /> 
               <Route path="/signup" element={<Signup />} />  
-              <Route path="/users/:user_id/medications" element={<UserMedication />} />
-              <Route path="/users/:user_id/medications/new" element={<MedicationForm />} />
-              <Route path="/users/:user_id/trackers" element={<TrackerList />} /> 
-              <Route path="/users/:user_id/trackers/new" element={<TrackerForm />} /> 
+              <Route path="/users/:id/medications" element={<UserMedication />} />
+              <Route path="/users/:id/medications/new" element={<MedicationForm />} />
+              <Route path="/users/:id/medications/:id/edit" element={<EditMedicationForm />} /> 
+              <Route path="/users/:id/trackers" element={<TrackerList />} /> 
+              <Route path="/users/:id/trackers/new" element={<TrackerForm />} /> 
+             
             </Routes> 
         </TrackerProvider>
       </MedicationProvider>

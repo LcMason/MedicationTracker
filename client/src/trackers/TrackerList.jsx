@@ -6,7 +6,7 @@ import pills from "../images/pills.jpg"
 
 
 const TrackerList = () => {
-  const { user, handleDeleteUserTracker, handleEditUserTracker } = useContext(UserContext)
+  const { user, handleDeleteUserTracker } = useContext(UserContext)
 
 const handleDeleteClick = (id) => {
   fetch(`/users/${user.id}/trackers/${id}`, {
