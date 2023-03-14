@@ -49,7 +49,8 @@ class MedicationsController < ApplicationController
     end
 
     def destroy
-        @medication = current_user.medication.destroy
+        find_medication
+        @medication.destroy
         head :no_content
     end
 
