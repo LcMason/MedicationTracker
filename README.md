@@ -11,9 +11,26 @@ HTML5<br>
 Bootstrap<br>
 CSS
 
+## Setup
+
+#### Front End
+
+cd phase-4-medication-tracker/client<br>
+To install the dependencies run 'npm install'<br>
+Then run 'npm start' to run the front end at 'localhost:4000'
+
+#### Back End
+
+cd phase-4-medication-tracker<br>
+To install dependencies run 'bundle i' in your terminal<br>
+Then run 'rails s'
+
+
 ## Resources
 
 - https://www.makatimed.net.ph/blogs/10-most-prescribed-medicines/
 
+## Photo
+- https://unsplash.com/photos/ZHys6xN7sUE
 
 
