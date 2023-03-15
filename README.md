@@ -1,6 +1,6 @@
 
 ## Overview
-The **Medication Tracker** app was created so users can track their medication. The purpose of this application is to give users the ability to Track their Health with medications they are currently taking, create reviews based on the therapeutic affects or lack thereof of each medication, and assign it a rating ranging from 1 - 5. Users also have the ability to edit their rating and delete a medication if they are no longer taking it.
+The **Medication Tracker** app was created so users can track their medication. The purpose of this application is to give users the ability to Track their Health with medications they are currently taking, create reviews based on the therapeutic affects or lack thereof for each medication, and assign it a rating ranging from 1 - 5. Users also have the ability to edit their rating and delete a medication if they are no longer taking it.
 
 
 ## Tech Stack
