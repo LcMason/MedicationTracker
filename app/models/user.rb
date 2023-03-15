@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
     has_many :trackers
     has_many :medications, -> { distinct }, through: :trackers
+ 
 
     has_secure_password
 end

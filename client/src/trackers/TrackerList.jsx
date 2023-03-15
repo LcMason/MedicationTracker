@@ -27,7 +27,7 @@ console.log(user)
           />
           <div className="card-body" key={tracker.id} >
          
-            <p className="card-text text-light fw-bold">Medication : {tracker.name}</p>
+            <p className="card-text text-light fw-bold">Medication : {tracker.medication?.name}</p>
             <p className="card-text text-light fw-bold">Review : {tracker.review}</p>
             <p className="card-text text-light fw-bold">Frequency : {tracker.frequency}</p>
             <p className="card-text text-light fw-bold">Quantity : {tracker.quantity}</p>
