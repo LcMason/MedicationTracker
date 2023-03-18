@@ -36,7 +36,7 @@ const EditMedicationForm = () => {
         handleEditMed(medication)
           handleEditUserMed(medication)
         console.log("I am in EditMedicationForm!", medication)
-          navigate(`/users/${user.id}/medications`)
+          navigate(`/users/${user.id}/medications/${medication.id}`)
         })
       }
       else {
