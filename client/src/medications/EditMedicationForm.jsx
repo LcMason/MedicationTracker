@@ -12,7 +12,6 @@ const EditMedicationForm = () => {
     const navigate = useNavigate()
    
     const updateRating = user.medications.find((medication) => medication.id === parseInt(id) )
-    console.log(updateRating,"update rating", user, "user")
     
     const [rating, setRating] = useState(updateRating.rating)
     const [errors, setErrors] = useState([]);
@@ -74,7 +73,7 @@ const EditMedicationForm = () => {
             </div>
           </div>
           <div className="form-group">
-            <div className="mb-3 span-group">
+            <div className="mb-3 input-group">
             <span className="input-group-text">Instruction</span>
             <span className="input-group-text">{updateRating.instruction}</span>
             </div>
@@ -85,7 +84,6 @@ const EditMedicationForm = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Rating"
                 aria-label="Rating"
                 id="rating"
                 defaultValue={rating}

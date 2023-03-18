@@ -1,14 +1,7 @@
 class TrackersController < ApplicationController
-skip_before_action :authorize
-    # def index
-    #     if params[:user_id]
-    #         @user = User.find_by_id(params[:user_id])
-    #         render json: @user.trackers, status: :ok
-    #     else
-    #         render json: { message: "Unauthorized" }, status: :unauthorized
-    #     end
-    # end
-
+# skip_before_action :authorize
+    before_action :authorize
+ 
     def index
         render json: Tracker.all
     end

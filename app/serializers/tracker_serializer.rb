@@ -3,5 +3,5 @@ class TrackerSerializer < ActiveModel::Serializer
 
   has_one :medication
   # belongs_to :user
-
+  # belongs_to :medication
 end

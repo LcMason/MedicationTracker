@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :medications
   has_many :trackers, each_serializer: TrackerSerializer
+  # has_many :trackers, serializer: TrackerSerializer
 end

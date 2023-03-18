@@ -32,7 +32,7 @@ const handleLogout = () => {
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers`}>Trackers</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers/new`}>Create Reviews</Link>
+            <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers/new`}>Create Tracker</Link>
           </li>
           <li>
             <Link className="nav-link active" to="/login" onClick={handleLogout}>Logout</Link>

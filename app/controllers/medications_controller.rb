@@ -1,26 +1,7 @@
 class MedicationsController < ApplicationController
-    # before_action :authorize
     skip_before_action :authorize, only: :index
-    before_action :find_medication, only: [:update, :destroy]
-
-   
-
-    # def index
-    #     if @current_user
-    #         render json: current_user.medications
-    #     else
-    #         render json: { message: "Unauthorized" }, status: :unauthorized
-    #     end
-    # end
-
-
-
-    # def index
-    #     if @current_user
-    #         render json: current_user.medications, status: :ok
-    #     else
-    #         render json: 
-    # end
+    before_action :find_medication, only: [:update, :destroy, :show]
+    # before_action :current_user, only: :create 
 
     def index
         if current_user
@@ -29,15 +10,14 @@ class MedicationsController < ApplicationController
             render json: Medication.all, status: :ok
         end
     end
-   
-    
 
-    # def show
-    #     @medication = find_medication
-    #     render json: medication, :include :user, status: :ok
-    # end
- 
+    def show
+        find_medication
+       render json: @medication, status: :ok
+    end
+
     def create
+    # byebug
         @medication = Medication.create!(medication_params)
         render json: @medication, status: :created 
     end

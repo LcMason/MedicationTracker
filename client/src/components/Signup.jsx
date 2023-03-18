@@ -13,11 +13,17 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log({
+      username,
+      password,
+      password_confirmation: passwordConfirmation,
+      age,
+    })
     fetch("/signup", {
       method: "POST",
+      headers: {
       "Accept": "application/json",
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"},
       body: JSON.stringify({
         username,
         password,
@@ -29,7 +35,7 @@ const SignUp = () => {
       .then((user) => {
         if (!user.errors) {
           signup(user);
-          navigate("/home");
+          navigate("/");
         } else {
           const errorLis = user.errors.map((e, index) => <li key={index}>{e}</li>);
           setErrors(errorLis);

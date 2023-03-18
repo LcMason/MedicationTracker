@@ -31,13 +31,13 @@ const MedicationForm = () => {
       "Content-Type": "application/json" },
       body: JSON.stringify(newMed)
     }).then((res) => { 
+      console.log(newMed, "this is a new medication")
       if (res.ok) {
-        console.log(res)
         res.json().then(medication => {
-          console.log(medication)
+          console.log(medication, "New Medication")
           addMed(medication)
           handleAddUserMeds(medication)
-          navigate(`/users/${user.id}/medications`)
+          navigate(`/users/${user.id}/medications/${medication.id}`)
         })
       }
       else {

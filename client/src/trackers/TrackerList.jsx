@@ -15,7 +15,7 @@ const handleDeleteClick = (id) => {
       handleDeleteUserTracker(id)
     })
 }
-console.log(user)
+console.log(user, "tracker list")
   return (
     <div>    
       <h4 className="py-2">Tracking My Health </h4>   

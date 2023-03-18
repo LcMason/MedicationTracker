@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
 
   resources :users, only: :index do
-    resources :medications, except: :show
+    resources :medications
   end
 
   resources :users, only: :index do
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   resources :users, except: [:update, :destroy]
   resources :medications, only: :index
-  # resources :medications, except: :show
   resources :trackers, only: :index
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

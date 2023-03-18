@@ -16,6 +16,7 @@ import { UserProvider } from './context/UserContext';
 import MedicationForm from './medications/MedicationForm';
 import EditMedicationForm from './medications/EditMedicationForm';
 import UserMedication from './users/UserMedication';
+import UserMedDetail from './users/UserMedDetail'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/login" element={<Login />} /> 
               <Route path="/signup" element={<Signup />} />  
               <Route path="/users/:id/medications" element={<UserMedication />} />
+              <Route path="/users/:id/medications/:id" element={<UserMedDetail />} />
               <Route path="/users/:id/medications/new" element={<MedicationForm />} />
               <Route path="/users/:id/medications/:id/edit" element={<EditMedicationForm />} /> 
               <Route path="/users/:id/trackers" element={<TrackerList />} /> 
