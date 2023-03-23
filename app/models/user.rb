@@ -4,7 +4,8 @@ class User < ApplicationRecord
     validates :age, numericality: { greater_than_or_equal_to: 18 }
 
     has_many :trackers
-    has_many :medications, -> { distinct }, through: :trackers
+    # has_many :medications, -> { distinct }, through: :trackers
+    has_many :medications, through: :trackers
  
 
     has_secure_password

@@ -29,11 +29,10 @@ const TrackerForm = () => {
       review,
       frequency,
       quantity,
-      medication_id,
-      user_id: user.id
+      medication_id
     }
 
-    fetch(`/users/${user.id}/trackers`, {
+    fetch(`/trackers`, {
     method: "POST", 
       headers: {
       "Accept": "application/json",

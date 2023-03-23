@@ -9,17 +9,13 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
 
-  resources :users, only: :index do
+  resources :users, except: [:update, :destroy] do
+    resources :trackers
     resources :medications
   end
 
-  resources :users, only: :index do
-    resources :trackers
-  end
-
-  resources :users, except: [:update, :destroy]
   resources :medications, only: :index
-  resources :trackers, only: :index
+  resources :trackers, only: [:index, :create]
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

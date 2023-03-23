@@ -6,13 +6,8 @@ class TrackersController < ApplicationController
         render json: Tracker.all
     end
 
-    # def create
-    #     @tracker = current_user.trackers.create!(tracker_params)
-    #     render json: @tracker, status: :created 
-    # end
-
     def create
-        @tracker = Tracker.create!(tracker_params)
+        @tracker = current_user.trackers.create!(tracker_params)
         render json: @tracker, status: :created 
     end
 
@@ -30,7 +25,7 @@ class TrackersController < ApplicationController
 
     private
     def tracker_params
-        params.permit(:review, :quantity, :frequency, :user_id, :medication_id)
+        params.permit(:review, :quantity, :frequency, :medication_id)
     end
 # end
 

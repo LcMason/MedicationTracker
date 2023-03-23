@@ -2,10 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 
 import Navbar from './navigation/Navbar';
-// import UserForm from './users/UserForm';
-// import UserList from './users/UserList';
 import Home from './components/Home';
-// import UserEdit from './users/UserEdit';
 import TrackerForm from './trackers/TrackerForm';
 import TrackerList from './trackers/TrackerList';
 import Login from './components/Login';
