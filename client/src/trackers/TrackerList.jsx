@@ -9,7 +9,7 @@ const TrackerList = () => {
   const { user, handleDeleteUserTracker } = useContext(UserContext)
 
 const handleDeleteClick = (id) => {
-  fetch(`/users/${user.id}/trackers/${id}`, {
+  fetch(`/trackers/${id}`, {
     method: "DELETE", 
     }).then(() => {
       handleDeleteUserTracker(id)

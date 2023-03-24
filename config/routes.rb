@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
 
   resources :users, except: [:update, :destroy] do
-    resources :trackers
+    resources :trackers, except: :destroy
     resources :medications
   end
 
   resources :medications, only: :index
-  resources :trackers, only: [:index, :create]
+  resources :trackers, only: [:index, :create, :destroy]
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

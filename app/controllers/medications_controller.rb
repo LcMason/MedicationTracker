@@ -1,7 +1,6 @@
 class MedicationsController < ApplicationController
     skip_before_action :authorize, only: :index
-    before_action :find_medication, only: [:update, :destroy, :show]
-    # before_action :current_user, only: :create 
+    before_action :find_medication, only: [:update, :destroy, :show] 
 
     def index
         if current_user
@@ -17,7 +16,6 @@ class MedicationsController < ApplicationController
     end
 
     def create
-    # byebug
         @medication = Medication.create!(medication_params)
         render json: @medication, status: :created 
     end

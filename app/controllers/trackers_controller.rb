@@ -1,5 +1,4 @@
 class TrackersController < ApplicationController
-# skip_before_action :authorize
     before_action :authorize
  
     def index
@@ -20,8 +19,6 @@ class TrackersController < ApplicationController
             render json: {message: "Cannot Delete"}
         end
     end
-
-# # Pass medication to tracker controller to have access to create a new review
 
     private
     def tracker_params

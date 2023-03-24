@@ -11,7 +11,9 @@ const UserProvider = ({ children }) => {
         fetch("/me")
         .then((resp => resp.json()))
         .then(user => {
-          login(user)
+          if(!user.errors) {
+            login(user)
+          }
         })
     }, []);
 
