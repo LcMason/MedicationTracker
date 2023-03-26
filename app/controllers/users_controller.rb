@@ -12,6 +12,14 @@ class UsersController < ApplicationController
         render json: user, status: :created 
     end
 
+   # def high_quantity
+    #    user = User.find_by(id: params[:id])
+
+   # end
+
+    #all tracker objects that belong to a user of 1 with a quantity > 5.
+
+
         # GET /me 
         def show
             render json: @current_user

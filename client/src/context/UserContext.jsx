@@ -17,7 +17,6 @@ const UserProvider = ({ children }) => {
         })
     }, []);
 
-
   const login = (user) => {
     setUser(user);
     setLoggedIn(true);
@@ -52,7 +51,7 @@ const UserProvider = ({ children }) => {
     setUser({...user, trackers: [...user.trackers, tracker]})
 
   }
-  //deleting from nested property 
+
   const handleDeleteUserTracker = (id) => {
     const deleteTracker = user.trackers.filter(tracker => tracker.id !== id)
       setUser({...user, trackers: deleteTracker})

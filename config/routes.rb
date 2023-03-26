@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
 
+  #get "/users/:id/quantity", to: "users#high_quantity"
+
+  #/users/${user_id}/quantity
+
+#all tracker objects that belong to a user of 1 with a quantity > 5.
+
   resources :users, except: [:update, :destroy] do
     resources :trackers, except: :destroy
     resources :medications

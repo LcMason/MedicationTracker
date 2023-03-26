@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { MedicationContext } from '../context/MedicationContext'
 import { UserContext } from '../context/UserContext'
 
-
 const EditMedicationForm = () => {
     const { id } = useParams()
     const { user, handleEditUserMed } = useContext(UserContext)
@@ -19,7 +18,6 @@ const EditMedicationForm = () => {
   function handleSubmit(e) {
     e.preventDefault();
    
-
     const editMed = {
       rating
     }

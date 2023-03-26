@@ -24,8 +24,5 @@ class TrackersController < ApplicationController
     def tracker_params
         params.permit(:review, :quantity, :frequency, :medication_id)
     end
-# end
-
-
 
 end

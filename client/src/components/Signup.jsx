@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 
-
 const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -41,11 +40,6 @@ const SignUp = () => {
           setErrors(errorLis);
         }
       });
-      //clear form
-      // setUsername("");
-      // setPassword("");
-      // setPasswordConfirmation("");
-      // setAge("");
   };
 
   useEffect(() => {

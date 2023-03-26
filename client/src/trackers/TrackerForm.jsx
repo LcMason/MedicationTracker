@@ -64,7 +64,7 @@ const TrackerForm = () => {
       setErrors([])
     }
   },[setErrors])
-  // console.log(listMeds)
+
     return (
       <div className="container-flex">
       <div className="row justify-content-center">
@@ -132,29 +132,5 @@ const TrackerForm = () => {
   
   )
 };
-// import React, {useState, useEffect, useContext} from 'react'
-// import { useNavigate } from 'react-router-dom'
-// import { MedicationContext } from '../context/MedicationContext'
-// import { UserContext } from '../context/UserContext'
-
-// const TrackerForm = () => {
-//   const [reviews, setReviews] = useState("")
-//   const [frequency, setFrequency] = useState("")
-//   const [quantity, setQuantity] = useState("")
-
-//   const { user } = useContext(UserContext)
-//   const navigate = useNavigate()
-
-
-
-
-
-
-
-
-//   return (
-//     <div>TrackerForm</div>
-//   )
-// }
 
 export default TrackerForm

@@ -5,7 +5,6 @@ const MedicationContext =  createContext();
 const MedicationProvider = ({ children }) => {
   const [medications, setMedications] = useState([]);
  
-
     useEffect(() => {
         fetch('/medications')
         .then((resp) => resp.json())
