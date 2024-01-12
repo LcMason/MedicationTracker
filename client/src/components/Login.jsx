@@ -27,7 +27,7 @@ const Login = () => {
       if (res.ok) {
         res.json().then(user => {
           login(user)
-          navigate(`/users/${user.id}/medications`)
+          navigate(`/users/${user.id}/medications`) //TDOO: change navigate to hit /users/${user.id}/dashboard
         })
       }
       else {
@@ -67,7 +67,7 @@ const Login = () => {
             <div className="mb-3 input-group">
             <span className="input-group-text">Password</span>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Enter Password"
                 aria-label="Password"
