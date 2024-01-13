@@ -31,5 +31,5 @@
 /config/master.key
 
 # Igore node_modules
-node_modules/
+# node_modules/
 
