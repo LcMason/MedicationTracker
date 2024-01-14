@@ -7,6 +7,7 @@ import TrackerForm from './trackers/TrackerForm';
 import TrackerList from './trackers/TrackerList';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
 import { MedicationProvider } from './context/MedicationContext';
 import { TrackerProvider } from './context/TrackerContext';
 import { UserProvider } from './context/UserContext';
@@ -25,7 +26,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} /> 
               <Route path="/login" element={<Login />} /> 
-              <Route path="/signup" element={<Signup />} />  
+              <Route path="/signup" element={<Signup />} /> 
+              <Route path="/users/:id/dashboard" element={<Dashboard />} /> 
               <Route path="/users/:id/medications" element={<UserMedication />} />
               <Route path="/users/:id/medications/:id" element={<UserMedDetail />} />
               <Route path="/users/:id/medications/new" element={<MedicationForm />} />

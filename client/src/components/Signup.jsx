@@ -34,7 +34,7 @@ const SignUp = () => {
       .then((user) => {
         if (!user.errors) {
           signup(user);
-          navigate("/");
+          navigate("/"); // TODO: Navigate to Dashboard
         } else {
           const errorLis = user.errors.map((e, index) => <li key={index}>{e}</li>);
           setErrors(errorLis);
