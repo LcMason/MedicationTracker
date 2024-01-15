@@ -104,7 +104,7 @@ const SignUp = () => {
             <div className="mb-3 input-group">
             <span className="input-group-text">Enter Password</span>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Password"
                 aria-label="Password"
@@ -118,7 +118,7 @@ const SignUp = () => {
             <div className="mb-3 input-group">
             <span className="input-group-text">Password Confirmation</span>
               <input
-                type="text"
+                type="password"
                 className="form-control"
                 placeholder="Enter Password Confirmation"
                 aria-label="password_confirmation"
