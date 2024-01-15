@@ -1,9 +1,9 @@
 import React from 'react'
-import medicationtracker from '../images/medicationtracker.jpg'
+import homepage from '../images/homepage.jpg'
 const Home = () => {
   return (
     <div className="container-fluid">
-        <img className="img-fluid" src={medicationtracker} alt="pic of pill"/>
+        <img className="img-fluid" src={homepage} alt="pic of pill"/>
   
     </div>
   )
