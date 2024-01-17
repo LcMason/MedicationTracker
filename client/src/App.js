@@ -15,6 +15,7 @@ import MedicationForm from './medications/MedicationForm';
 import EditMedicationForm from './medications/EditMedicationForm';
 import UserMedication from './users/UserMedication';
 import UserMedDetail from './users/UserMedDetail'
+import Chart from './components/Chart';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/users/:id/medications/:id/edit" element={<EditMedicationForm />} /> 
               <Route path="/users/:id/trackers" element={<TrackerList />} /> 
               <Route path="/users/:id/trackers/new" element={<TrackerForm />} /> 
+              <Route path="/users/:id/chart" element={<Chart />} />
              
             </Routes> 
         </TrackerProvider>
