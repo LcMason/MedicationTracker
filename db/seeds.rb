@@ -17,6 +17,7 @@ puts ":medical_symbol: Seeding users..."
 user1 = User.create(username: "Lionel Mason", password: "flatironschool", age: 25)
 user2 = User.create(username: "Charles Grand", password: "theFlatironschool", age: 30)
 user3 = User.create(username: "LcMason", password: "NewYorkCity", age: 35)
+# TODO: add race gender name to user table
 
 
 

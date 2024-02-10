@@ -27,7 +27,7 @@ const Login = () => {
       if (res.ok) {
         res.json().then(user => {
           login(user)
-          navigate(`/users/${user.id}/medications`) //TDOO: change navigate to hit /users/${user.id}/dashboard
+          navigate(`/users/${user.id}/dashboard`) 
         })
       }
       else {

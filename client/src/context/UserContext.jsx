@@ -14,6 +14,9 @@ const UserProvider = ({ children }) => {
           if(!user.errors) {
             login(user)
           }
+          else {
+            setLoggedIn(false)
+          }
         })
     }, []);
 

@@ -1,8 +1,15 @@
 // Import necessary libraries
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
-import { Data } from './utils/Data';
+import Data from './utils/Data';  // # TODO cannot find path
 
+
+// import Data from '../utils/Data';
+
+
+
+
+const Chart = () => {
 // Function to format the data for Chart.js
 const formatChartData = (data) => ({
   labels: data.map(entry => entry.year),
@@ -32,7 +39,7 @@ const formatChartData = (data) => ({
 });
 
 // Chart component
-const MyChart = () => {
+// const Chart = () => {
   // Format the data for Chart.js
   const chartData = formatChartData(Data);
 
@@ -52,5 +59,5 @@ const MyChart = () => {
   );
 };
 
-export default MyChart;
+export default Chart;
 

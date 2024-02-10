@@ -1,5 +1,4 @@
-
-export const Data = [
+const Data = [
   {
     id: 1,
     year: 2019,
@@ -36,3 +35,5 @@ export const Data = [
     neutral: 20
   }
 ];
+
+export default Data;
