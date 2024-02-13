@@ -128,22 +128,20 @@ const SignUp = () => {
               />
             </div>
           </div>
-
           <div className="form-group">
             <div className="mb-3 input-group">
-              <span className="input-group-text">Name</span>
+              <span className="input-group-text">Age</span>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter Name"
                 aria-label="namr"
                 id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
               />
             </div>
           </div>
-
             <div className="form-group">
               <div className="mb-3 input-group">
                 <label htmlFor="gender" className="input-group-text">Gender</label>
@@ -179,24 +177,9 @@ const SignUp = () => {
                   <option value="Japanese">Japanese</option>
                   <option value="Korean">Korean</option>
                   <option value="Other">Other</option>
-                  {/* Add more race options as needed */}
                 </select>
               </div>
             </div>
-          <div className="form-group">
-            <div className="mb-3 input-group">
-            <span className="input-group-text">Age</span>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter Age"
-                aria-label="Age"
-                id="age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            </div>
-        </div>
             <div className="form-group">
               <div className="mb-3 input-group">
                 <label htmlFor="profile-picture" className="input-group-text">Profile Picture</label>
