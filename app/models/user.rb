@@ -8,6 +8,14 @@ class User < ApplicationRecord
 
     has_many :trackers
     has_many :medications, -> { distinct }, through: :trackers
+      # has_many :chart_data TODO
+
+        # def chart_data
+    # Custom method to fetch chart data associated with the user
+    # Implement this method based on how your chart data is stored in your database
+    # For example, you might have something like:
+#     self.chart_data.map { |data| { year: data.year, excellent: data.excellent, good: data.good, neutral: data.neutral } }
+#   end
 
     has_secure_password
 end
