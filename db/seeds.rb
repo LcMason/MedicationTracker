@@ -14,9 +14,9 @@ Tracker.destroy_all
 # assign each user to a variable
 #follow format for medication_id: medication1.id
 puts ":medical_symbol: Seeding users..."
-user1 = User.create(username: "Lionel Mason", password: "flatironschool", age: 25)
-user2 = User.create(username: "Charles Grand", password: "theFlatironschool", age: 30)
-user3 = User.create(username: "LcMason", password: "NewYorkCity", age: 35)
+user1 = User.create(username: "Lionel Mason", password: "flatironschool", name: "Lionel", gender: "Male", race: "African American/Black", age: 25)
+user2 = User.create(username: "Charles Grand", password: "theFlatironschool", name: "Lionel", gender: "Male", race: "African American/Black", age: 30)
+user3 = User.create(username: "LcMason", password: "NewYorkCity", name: "Lionel", gender: "Male", race: "Hispanic", age: 35)
 # TODO: add race gender name to user table
 
 
@@ -35,13 +35,13 @@ medication10 = Medication.create(name: "Atorvastatin", form: "Tablet", instructi
 
 
 puts ":medical_symbol: Seeding trackers..."
-tracker1 = Tracker.create(review: "helps with severe pain.", frequency: 2, quantity: 13, user_id: user1.id, medication_id: medication1.id )
-tracker2 = Tracker.create(review: "experience nausea and some vomitting.", frequency: 2, quantity: 13, user_id: user2.id, medication_id: medication2.id )
-tracker3 = Tracker.create(review: "regulated my blood pressure.", frequency: 4, quantity: 15, user_id: user3.id, medication_id: medication3.id )
-tracker4 = Tracker.create(review: "cured my bacterial infection.", frequency: 4, quantity: 22, user_id: user1.id, medication_id: medication4.id )
-tracker5 = Tracker.create(review: "eased my asthma attack.", frequency: 4, quantity: 10, user_id: user2.id, medication_id: medication5.id )
-tracker6 = Tracker.create(review: "relieved symptoms related to my allergies.", frequency: 2, quantity: 11, user_id: user3.id, medication_id: medication6.id )
-tracker7 = Tracker.create(review: "controlled my seizures and provided relief for nerve pain.", frequency: 3, quantity: 12, user_id: user1.id, medication_id: medication7.id )
-tracker8 = Tracker.create(review: "provided relief for my acid reflux.", frequency: 1, quantity: 12, user_id: user2.id, medication_id: medication8.id )
-tracker9 = Tracker.create(review: "experienced muscle cramps and headaches.", frequency: 1, quantity: 11, user_id: user3.id, medication_id: medication9.id )
-tracker10 = Tracker.create(review: "experienced cold like symptoms.", frequency: 1, quantity: 10, user_id: user1.id, medication_id: medication10.id )
+tracker1 = Tracker.create(comment: "helps with severe pain.", frequency: 2, quantity: 13, user_id: user1.id, medication_id: medication1.id )
+tracker2 = Tracker.create(comment: "experience nausea and some vomitting.", frequency: 2, quantity: 13, user_id: user2.id, medication_id: medication2.id )
+tracker3 = Tracker.create(comment: "regulated my blood pressure.", frequency: 4, quantity: 15, user_id: user3.id, medication_id: medication3.id )
+tracker4 = Tracker.create(comment: "cured my bacterial infection.", frequency: 4, quantity: 22, user_id: user1.id, medication_id: medication4.id )
+tracker5 = Tracker.create(comment: "eased my asthma attack.", frequency: 4, quantity: 10, user_id: user2.id, medication_id: medication5.id )
+tracker6 = Tracker.create(comment: "relieved symptoms related to my allergies.", frequency: 2, quantity: 11, user_id: user3.id, medication_id: medication6.id )
+tracker7 = Tracker.create(comment: "controlled my seizures and provided relief for nerve pain.", frequency: 3, quantity: 12, user_id: user1.id, medication_id: medication7.id )
+tracker8 = Tracker.create(comment: "provided relief for my acid reflux.", frequency: 1, quantity: 12, user_id: user2.id, medication_id: medication8.id )
+tracker9 = Tracker.create(comment: "experienced muscle cramps and headaches.", frequency: 1, quantity: 11, user_id: user3.id, medication_id: medication9.id )
+tracker10 = Tracker.create(comment: "experienced cold like symptoms.", frequency: 1, quantity: 10, user_id: user1.id, medication_id: medication10.id )

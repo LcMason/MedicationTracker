@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_14_002836) do
+ActiveRecord::Schema.define(version: 2024_03_02_160841) do
 
   create_table "medications", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2024_01_14_002836) do
   end
 
   create_table "trackers", force: :cascade do |t|
-    t.string "review"
+    t.string "comment"
     t.integer "frequency"
     t.integer "quantity"
     t.integer "user_id"

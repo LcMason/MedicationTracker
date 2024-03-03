@@ -1,5 +1,5 @@
 class TrackerSerializer < ActiveModel::Serializer
-  attributes :id, :review, :quantity, :frequency, :medication_id, :user_id, :medication
+  attributes :id, :comment, :quantity, :frequency, :medication_id, :user_id, :medication
 
   # has_one :medication
   # belongs_to :user
