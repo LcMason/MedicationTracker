@@ -8,6 +8,7 @@ const TrackerForm = () => {
   const [frequency, setFrequency] = useState("")
   const [quantity, setQuantity] = useState("")
   const [medication_id, setMedicationId] = useState("");
+  const [reviewType, setReviewType] = useState("")
   const { user, handleAddUserTracker } = useContext(UserContext)
   const { addTracker } = useContext(TrackerContext)
 
@@ -28,8 +29,9 @@ const TrackerForm = () => {
       comment,
       frequency,
       quantity,
-      medication_id
-    }
+      medication_id,
+      review_type: reviewType
+    };
 
     fetch(`/trackers`, {
       method: "POST",
@@ -78,7 +80,19 @@ const TrackerForm = () => {
                 <select id="medication_id" className="form-control" defaultValue={medication_id} onChange={(e) => setMedicationId(e.target.value)}>{listMeds}</select>
               </div>
             </div>
-            
+
+            <div className="form-group">
+              <div className="mb-3 input-group">
+                <label htmlFor="reviewType" className="input-group-text">Review Type</label>
+                <select id="reviewType" className="form-control" value={reviewType} onChange={(e) => setReviewType(e.target.value)}>
+                  <option value="">Select Review Type</option>
+                  <option value="excellent">Excellent</option>
+                  <option value="good">Good</option>
+                  <option value="neutral">Neutral</option>
+                </select>
+              </div>
+            </div>
+
             <div className="form-group">
               <div className="mb-3 input-group">
                 <span className="input-group-text">Comment</span>
