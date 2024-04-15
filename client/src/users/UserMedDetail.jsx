@@ -18,6 +18,12 @@ const UserMedDetail = () => {
   const getMed = medications.find(medication => medication.id === parseInt(id))
   const getTracker = trackers.find(tracker => tracker.medication.id === parseInt(id))
 
+  const reviewTypes = {
+    2: 'Excellent',
+    1: 'Good',
+    0: 'Neutral'
+  }
+
   // const handleDeleteClick = (id) => {
   //     fetch(`/users/${user.id}/medications/${id}`, {
   //       method: "DELETE", 
@@ -39,7 +45,10 @@ const UserMedDetail = () => {
             <p className="card-text text-light fw-bold">Form : {getMed.form}</p>
             <p className="card-text text-light fw-bold">Instruction : {getMed.instruction}</p>
             {getTracker && (
+              <div>
               <p className="card-text text-light fw-bold">Comments : {getTracker.comment}</p>
+                <p className="card-text text-light fw-bold">Review Type : {reviewTypes[getTracker.review_type]}</p>
+              </div>
             )}
             <p className="card-text text-light fw-bold">Rating : {getMed.rating}</p>
             <div className="pb-2">
