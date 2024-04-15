@@ -4,7 +4,6 @@ import pills from '../images/pills.jpg'
 
 const MedCard = ({medication}) => {
     const {id, name, form, instruction, rating} = medication
-    
       return (
         <div className="col bg-dark">
           <img

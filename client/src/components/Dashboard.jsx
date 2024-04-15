@@ -6,12 +6,13 @@ import PieChart from './PieChart';
 const Dashboard = () => {
     const { user, login } = useContext(UserContext);
     const navigate = useNavigate();
-
+    console.log(user)
     useEffect(() => {
         if (!login) {
             navigate(`/`);
         }
-    }, [login, navigate]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [login]);
 
     return (
         <div>

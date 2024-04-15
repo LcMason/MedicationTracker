@@ -5,6 +5,11 @@ class TrackersController < ApplicationController
         render json: Tracker.all
     end
 
+    def show
+        # TODO: create route for review_type. target id. find_by :id
+    end
+
+
     def create
         @tracker = current_user.trackers.create!(tracker_params)
         render json: @tracker, status: :created 

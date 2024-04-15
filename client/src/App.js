@@ -16,7 +16,8 @@ import MedicationForm from './medications/MedicationForm';
 import EditMedicationForm from './medications/EditMedicationForm';
 import UserMedication from './users/UserMedication';
 import UserMedDetail from './users/UserMedDetail'
-import PieChart from './components/PieChart'
+
+
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
               <Route path="/" element={<Home />} /> 
               <Route path="/login" element={<Login />} /> 
               <Route path="/signup" element={<Signup />} /> 
-              <Route path="/users/:id/dashboard" element={<Dashboard PieChart={<PieChart />} />} /> 
+              <Route path="/users/:id/dashboard" element={<Dashboard />} /> 
               <Route path="/users/:id/medications" element={<UserMedication />} />
               <Route path="/users/:id/medications/:id" element={<UserMedDetail />} />
               <Route path="/users/:id/medications/new" element={<MedicationForm />} />

@@ -35,5 +35,5 @@ const Data = [
     neutral: 20
   }
 ];
-
+// console.log(Data, "this is my data")
 export default Data;
