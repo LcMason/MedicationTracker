@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-import PieChart from './PieChart';
+// import PieChart from './PieChart';
 
 const Dashboard = () => {
     const { user, login } = useContext(UserContext);
     const navigate = useNavigate();
-    console.log(user)
+    console.log("logged in user", user)
     useEffect(() => {
         if (!login) {
             navigate(`/`);
@@ -18,7 +18,7 @@ const Dashboard = () => {
         <div>
             <h1>User Dashboard</h1>
             {/* Render the PieChart component within the Dashboard */}
-            <PieChart chartData={user.chartData} />
+            {/* <PieChart chartData={user.chartData} /> */}
         </div>
     );
 };

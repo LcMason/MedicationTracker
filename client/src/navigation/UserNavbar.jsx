@@ -11,6 +11,8 @@ const handleLogout = () => {
   { method: 'DELETE'})
   .then(() => {logout()})
 }
+
+  const greeting = user ? `Welcome, ${user.username}` : '';
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container-fluid">
@@ -38,6 +40,7 @@ const handleLogout = () => {
             <Link className="nav-link active" to="/login" onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
+          {user && <span className="navbar-text text-light">{greeting}</span>}
       </div>
       </div>
    </nav> 
