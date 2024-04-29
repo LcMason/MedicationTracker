@@ -16,9 +16,16 @@ const Dashboard = () => {
 
     return (
         <div>
-            <h1>User Dashboard</h1>
             {/* Render the PieChart component within the Dashboard */}
             {/* <PieChart chartData={user.chartData} /> */}
+            {login && (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <h2 style={{ marginRight: '10px' }}>Welcome, {user.name}</h2>
+                    <p style={{ marginRight: '10px' }}>Age: {user.age}</p>
+                    <p style={{ marginRight: '10px' }}>Gender: {user.gender}</p>
+                    <p>Race: {user.race}</p>
+                </div>
+            )}
         </div>
     );
 };
