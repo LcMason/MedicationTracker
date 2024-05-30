@@ -16,8 +16,9 @@ const Dashboard = () => {
 
     return (
         <div>
-            {/* Render the PieChart component within the Dashboard */}
+            {/* TODO Render the PieChart component within the Dashboard */}
             {/* <PieChart chartData={user.chartData} /> */}
+            {/* TODO place a hyperlink on the website to take users to webMD. */}
             {login && (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <h2 style={{ marginRight: '10px' }}>Welcome, {user.name}</h2>

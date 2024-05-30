@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom'
 const UserMedication = () => {
 
 const { user, handleDeleteUserMed } = useContext(UserContext)
-  // console.log(user, "medications")
-  // TODO: create a medication detail page that will show all info about a medication (target each specific medication by using the id)
-  // TODO: This details page will also show an object containing review_type: {excellent, good, neutral} in percentage form.
-  //TODO: Details page will also show user comments
 const handleDeleteClick = (id) => {
   fetch(`/users/${user.id}/medications/${id}`, {
     method: "DELETE", 
