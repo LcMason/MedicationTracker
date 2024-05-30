@@ -23,7 +23,11 @@ const handleLogout = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarColor01">
+          {user && <span className="navbar-text text-light">{greeting}</span>}
         <ul className="navbar-nav me-auto">
+            <li className="nav-item">
+              <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/dashboard`}>Dashboard</Link>
+            </li>
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/medications`}>Medications</Link>
           </li>
@@ -40,7 +44,7 @@ const handleLogout = () => {
             <Link className="nav-link active" to="/login" onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
-          {user && <span className="navbar-text text-light">{greeting}</span>}
+          {/* {user && <span className="navbar-text text-light">{greeting}</span>} */}
       </div>
       </div>
    </nav> 
