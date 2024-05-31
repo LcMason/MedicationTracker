@@ -12,6 +12,8 @@ class UsersController < ApplicationController
         render json: user, status: :created 
     end
 
+
+    # TODO : 
    # def high_quantity
     #    user = User.find_by(id: params[:id])
 
@@ -24,6 +26,10 @@ class UsersController < ApplicationController
         def show
             render json: @current_user
         end
+
+   
+
+
 
 
     private

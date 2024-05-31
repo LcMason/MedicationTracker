@@ -9,6 +9,7 @@ import TrackerList from './trackers/TrackerList';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import UserDashboard from './users/UserDashboard';
+import AdminDashboard from './components/admin/AdminDashboard';
 import { MedicationProvider } from './context/MedicationContext';
 import { TrackerProvider } from './context/TrackerContext';
 import { UserProvider } from './context/UserContext';
@@ -34,6 +35,7 @@ function App() {
               <Route path="/login" element={<Login />} /> 
               <Route path="/signup" element={<Signup />} /> 
               <Route path="/users/:id/dashboard" element={<UserDashboard />} /> 
+              <Route path="/admin/dashboard" element={<AdminDashboard />} /> 
               <Route path="/users/:id/medications" element={<UserMedication />} />
               <Route path="/users/:id/medications/:id" element={<UserMedDetail />} />
               <Route path="/users/:id/medications/new" element={<MedicationForm />} />

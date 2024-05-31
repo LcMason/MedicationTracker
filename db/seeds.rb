@@ -27,7 +27,8 @@ user1 = User.create(
 user2 = User.create(
     username: "Charles Grand", 
     password: "theFlatironschool", 
-    name: "Lionel", gender: "Male", 
+    name: "Charles", 
+    gender: "Male", 
     race: "African American/Black", 
     age: 30,
     role: "user"
@@ -36,7 +37,7 @@ user2 = User.create(
 user3 = User.create(
     username: "LcMason", 
     password: "NewYorkCity", 
-    name: "Lionel", 
+    name: "Mason", 
     gender: "Male", 
     race: "Hispanic", 
     age: 35,

@@ -1,17 +1,18 @@
 import React, { useContext, useEffect } from 'react';
-import { UserContext } from '../context/UserContext';
+import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 // import PieChart from './PieChart';
 
-const UserDashboard = () => {
+const AdminDashboard = () => {
     const { user, login } = useContext(UserContext);
     const navigate = useNavigate();
     console.log("logged in user", user)
     useEffect(() => {
         if (!login) {
             navigate(`/`);
-        } else if (login && user.admin)
-            navigate(`admin/dashboard`)
+        } else if (!user.admin) {
+            navigate(`/users/${user.id}/dashboard`)
+        };  
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [login]);
 
@@ -26,13 +27,11 @@ const UserDashboard = () => {
                     <p style={{ marginRight: '10px' }}>Age: {user.age}</p>
                     <p style={{ marginRight: '10px' }}>Gender: {user.gender}</p>
                     <p>Race: {user.race}</p>
-
+                    <p>Admin Dashboard</p>
                 </div>
             )}
         </div>
     );
 };
 
-export default UserDashboard;
-
-
+export default AdminDashboard

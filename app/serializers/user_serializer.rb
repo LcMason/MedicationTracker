@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :name, :gender, :age, :race
+  attributes :id, :username, :name, :gender, :age, :race, :role
 
   has_many :medications
   has_many :trackers, each_serializer: TrackerSerializer

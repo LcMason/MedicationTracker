@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   
   #all tracker objects that belong to a user of 1 with a quantity > 5.
   
-  get '/users/:id/dashboard', to: 'dashboard#index'
+  get '/users/:id/dashboard', to: 'user_dashboard#show'
+  get '/admin/dashboard', to: 'admin_dashboard#show'
   resources :users, except: [:update, :destroy] do
     resources :trackers, except: :destroy
     resources :medications

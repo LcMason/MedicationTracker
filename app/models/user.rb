@@ -4,12 +4,19 @@ class User < ApplicationRecord
     validates :age, numericality: { greater_than_or_equal_to: 18 }
     validates :name, presence: true
     validates :gender, presence: true
-    validates :race,  presence: true
+    validates :race, presence: true
 
     has_many :trackers
     has_many :medications, -> { distinct }, through: :trackers
 
     
+    def admin?
+        role == 'admin'
+    end
+
+    def user?
+        role == 'user'
+    end
       # has_many :chart_data TODO
 
         # def chart_data
