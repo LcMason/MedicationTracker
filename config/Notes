@@ -1,0 +1,8 @@
+Controller - DashboardCont
+
+Routing - 
+
+create Pages folder. Files - UserPage & AdminPage
+
+
+create Admin folder. Files - AdminNavbar, AdminDashboard

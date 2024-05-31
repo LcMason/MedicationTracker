@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
     has_many :trackers
     has_many :medications, -> { distinct }, through: :trackers
+
+    
       # has_many :chart_data TODO
 
         # def chart_data

@@ -14,12 +14,34 @@ Tracker.destroy_all
 # assign each user to a variable
 #follow format for medication_id: medication1.id
 puts ":medical_symbol: Seeding users..."
-user1 = User.create(username: "Lionel Mason", password: "flatironschool", name: "Lionel", gender: "Male", race: "African American/Black", age: 25)
-user2 = User.create(username: "Charles Grand", password: "theFlatironschool", name: "Lionel", gender: "Male", race: "African American/Black", age: 30)
-user3 = User.create(username: "LcMason", password: "NewYorkCity", name: "Lionel", gender: "Male", race: "Hispanic", age: 35)
-# TODO: add race gender name to user table
+user1 = User.create(
+    username: "Lionel Mason", 
+    password: "flatironschool", 
+    name: "Lionel", 
+    gender: "Male", 
+    race: "African American/Black", 
+    age: 25,
+    role: "admin"
+)
 
+user2 = User.create(
+    username: "Charles Grand", 
+    password: "theFlatironschool", 
+    name: "Lionel", gender: "Male", 
+    race: "African American/Black", 
+    age: 30,
+    role: "user"
+)
 
+user3 = User.create(
+    username: "LcMason", 
+    password: "NewYorkCity", 
+    name: "Lionel", 
+    gender: "Male", 
+    race: "Hispanic", 
+    age: 35,
+    role: "user"
+)
 
 puts ":medical_symbol: Seeding medications.."
 medication1 = Medication.create(name: "Hydrocodone", form: "Tablet", instruction: "Taken orally every 12 hours with or without food.", rating: 3 )
