@@ -2,9 +2,10 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import UserNavbar from './UserNavbar'
 import { UserContext } from '../context/UserContext'
+import AdminDashboard from '../components/admin/AdminDashboard'
 
 const Navbar = () => {
-const { loggedIn } = useContext(UserContext) 
+const { user, loggedIn } = useContext(UserContext) 
 
   if (!loggedIn) {
   return (
@@ -30,8 +31,12 @@ const { loggedIn } = useContext(UserContext)
   </nav>
   )
 } else {
-  
-  return <UserNavbar />
+  if (user.role === 'admin') {
+    return <AdminDashboard />
+  }
+  else if (user.role === 'user') {
+    return <UserNavbar />  
+  }  
 }
 } 
 

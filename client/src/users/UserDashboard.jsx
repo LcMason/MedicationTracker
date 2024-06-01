@@ -25,7 +25,9 @@ const UserDashboard = () => {
                     <h2 style={{ marginRight: '10px' }}>Welcome, {user.name}</h2>
                     <p style={{ marginRight: '10px' }}>Age: {user.age}</p>
                     <p style={{ marginRight: '10px' }}>Gender: {user.gender}</p>
-                    <p>Race: {user.race}</p>
+                    <p style={{ marginRight: '10px' }}>Race: {user.race}</p>
+               
+                  
 
                 </div>
             )}
