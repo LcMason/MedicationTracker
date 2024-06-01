@@ -30,14 +30,16 @@ const { user, loggedIn } = useContext(UserContext)
     </div>
   </nav>
   )
-} else {
-  if (user.role === 'admin') {
+} else if (user.role === 'admin') {
     return <AdminDashboard />
   }
   else if (user.role === 'user') {
     return <UserNavbar />  
-  }  
+  } 
+  else {
+    return null
+  } 
 }
-} 
+
 
 export default Navbar

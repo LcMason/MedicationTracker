@@ -10,7 +10,9 @@ const { logout, user } = useContext(UserContext)
 const handleLogout = () => {
   fetch('/logout',
   { method: 'DELETE'})
-  .then(() => {logout()})
+  .then(() => {
+    logout()
+  })
 }
 
   const greeting = user ? `Welcome, ${user.username}` : '';
