@@ -14,6 +14,7 @@ const MedicationForm = () => {
   const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate()
+  
   function handleSubmit(e) {
     e.preventDefault();
 

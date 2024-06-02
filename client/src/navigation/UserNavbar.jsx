@@ -38,9 +38,9 @@ const handleLogout = () => {
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/medications`}>Medications</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/medications/new`}>Create Medication</Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link className="nav-link text-light fw-bolder" aria-current="page" to={`/users/${user.id}/trackers`}>Trackers</Link>
           </li>

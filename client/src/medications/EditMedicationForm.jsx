@@ -10,24 +10,32 @@ const EditMedicationForm = () => {
     
     const navigate = useNavigate()
    
-    const updateRating = user.medications.find((medication) => medication.id === parseInt(id) )
-    
-    const [rating, setRating] = useState(updateRating.rating)
+    const updateMedication= user.medications.find((medication) => medication.id === parseInt(id) )
+    // const 
+    const [name, setName] = useState(updateMedication.name);
+    const [form, setForm] = useState(updateMedication.form);
+    const [instruction, setInstruction] = useState(updateMedication.instruction);
+
+    const [rating, setRating] = useState(updateMedication.rating)
     const [errors, setErrors] = useState([]);
+
+
+// TODO: if user.role === `admin` allow the entire form to be edited. If user.role === `user`, only edit rating.
+
 
   function handleSubmit(e) {
     e.preventDefault();
    
-    const editMed = {
-      rating
-    }
+    const editMedication = user.role === 'admin' ? 
+    {rating, name, form, instruction} :
+      {rating};
 
-    fetch(`/users/${user.id}/medications/${updateRating.id}`, {
+    fetch(`/users/${user.id}/medications/${updateMedication.id}`, {
     method: "PATCH", 
       headers: {
       "Accept": "application/json",
       "Content-Type": "application/json" },
-        body: JSON.stringify(editMed)
+        body: JSON.stringify(editMedication)
     }).then((res) => { 
       if (res.ok) {
         res.json().then(medication => {
@@ -60,20 +68,53 @@ const EditMedicationForm = () => {
         <form className="form my-5 justify-content-center text-center bg-dark border-dark p-3" onSubmit={handleSubmit}>
         <div className="form-group">
             <div className="mb-3 input-group">
-          <span className="input-group-text" > Medication</span>
-          <span className="input-group-text" > {updateRating.name}</span>
+          <span className="input-group-text" > Medication</span> 
+          { user.role === 'admin' ? (
+            <input
+            type="text"
+            className="form-control"
+            aria-label="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            />
+          ): (
+           <span className="input-group-text">{updateMedication.name}</span>
+          )}
         </div>
         </div> 
+
           <div className="form-group">
             <div className="mb-3 input-group">
             <span className="input-group-text">Form</span>
-            <span className="input-group-text">{updateRating.form}</span>
+            { user.role === 'admin' ? (
+              <input
+              type="text"
+              className="form-control"
+              aria-label="Name"
+              value={form}
+              onChange={(e) => setForm(e.target.value)}
+              />
+            ): (
+              <span className="input-group-text">{updateMedication.form}</span>
+            )}
             </div>
           </div>
+
           <div className="form-group">
             <div className="mb-3 input-group">
             <span className="input-group-text">Instruction</span>
-            <span className="input-group-text">{updateRating.instruction}</span>
+            { user.role === 'admin' ? (
+              <input
+              type="text"
+              className="form-control"
+              aria-label="Name"
+              value={name}
+              onChange={(e) => setInstruction(e.target.value)}
+              />
+            ) : 
+            <span className="input-group-text">{updateMedication.instruction}</span>
+            }
+            
             </div>
           </div>
           <div className="form-group">
