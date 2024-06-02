@@ -15,7 +15,7 @@ const UserDashboard = () => {
             navigate(`/admin/dashboard`)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loggedIn]);
+    }, [loggedIn, user.role]);
 
     return loggedIn && user.role !== 'admin' ? (
         <div>

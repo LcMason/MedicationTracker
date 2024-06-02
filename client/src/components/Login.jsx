@@ -26,8 +26,13 @@ const Login = () => {
     }).then((res) => {
       if (res.ok) {
         res.json().then(user => {
-          login(user)
-          navigate(`/users/${user.id}/dashboard`) 
+          login(user);
+          if (user.role === 'user') {
+            navigate(`/users/${user.id}/dashboard`) 
+          }
+          else if (user.role === 'admin') {
+            navigate(`/admin/dashboard`)
+          }
         })
       }
       else {

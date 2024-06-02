@@ -1,17 +1,21 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const UserNavbar = () => {
 const { logout, user } = useContext(UserContext) 
+const navigate = useNavigate();
 
 const handleLogout = () => {
   fetch('/logout',
   { method: 'DELETE'})
   .then(() => {
-    logout()
+    logout();
+    navigate(`/`);
+    
   })
 }
 

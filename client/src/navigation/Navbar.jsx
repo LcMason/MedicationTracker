@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import UserNavbar from './UserNavbar'
 import { UserContext } from '../context/UserContext'
-import AdminDashboard from '../components/admin/AdminDashboard'
+import AdminNavbar from './AdminNavbar'
 
 const Navbar = () => {
 const { user, loggedIn } = useContext(UserContext) 
@@ -31,7 +31,7 @@ const { user, loggedIn } = useContext(UserContext)
   </nav>
   )
 } else if (user.role === 'admin') {
-    return <AdminDashboard />
+    return <AdminNavbar />
   }
   else if (user.role === 'user') {
     return <UserNavbar />  

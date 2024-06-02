@@ -22,11 +22,11 @@ const AdminDashboard = () => {
             {/* {loggedIn && ( */}
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     {/* <h2 style={{ marginRight: '10px' }}>Welcome, {user.name}</h2> */}
-                    <h2>Welcome to the Admin Dashboard, {user.name}</h2>
-                    <p style={{ marginRight: '10px' }}>Age: {user.age}</p>
+                    <h4>Admin Dashboard</h4>
+                    {/* <p style={{ marginRight: '10px' }}>Age: {user.age}</p>
                     <p style={{ marginRight: '10px' }}>Gender: {user.gender}</p>
                     <p style={{ marginRight: '10px' }}>Race: {user.race}</p>
-                    <p>Admin Dashboard</p>
+                    <p>Admin Dashboard</p> */}
                 </div>
             {/* )} */}
         </div>
